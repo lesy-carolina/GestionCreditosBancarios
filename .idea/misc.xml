@@ -6,8 +6,10 @@
       <list>
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/ServicioEureka/pom.xml" />
+        <option value="$PROJECT_DIR$/ServicioCuentas/pom.xml" />
         <option value="$PROJECT_DIR$/ServicioClientes/pom.xml" />
         <option value="$PROJECT_DIR$/ServicioPrestamos/pom.xml" />
+        <option value="$PROJECT_DIR$/ServicioTransacciones/pom.xml" />
       </list>
     </option>
   </component>
