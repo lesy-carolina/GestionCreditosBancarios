@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class EstadoPrestamoDto {
-    private Long id;
+public class EstadoPrestamoRequest {
     private String nombre;
 }

@@ -7,18 +7,16 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PrestamoDto {
-    private Long id;
+public class PrestamoRequest {
     private Long clienteId;
     private Long cuentaId;
     private BigDecimal monto;
     private Integer plazoMeses;
     private BigDecimal tasaInteres;
-    private EstadoPrestamoDto estadoPrestamo;
+    private EstadoPrestamoRequest estadoPrestamo;
     private Date fechaDesembolso;
 }
