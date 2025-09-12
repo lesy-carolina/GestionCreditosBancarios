@@ -1,6 +1,8 @@
 package org.nttdata.com.servicioprestamos.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.nttdata.com.servicioprestamos.client.ClienteClient;
+import org.nttdata.com.servicioprestamos.client.dto.ClienteResponse;
 import org.nttdata.com.servicioprestamos.dto.PrestamoDto;
 import org.nttdata.com.servicioprestamos.exception.ResourceNotFound;
 import org.nttdata.com.servicioprestamos.models.Prestamo;
@@ -18,6 +20,8 @@ public class PrestamoServiceImpl implements PrestamoService {
     private final PrestamoRepository prestamoRepository;
     private final PrestamoMapper prestamoMapper;
     private final EstadoPrestamoMapper estadoPrestamoMapper;
+    private final ClienteClient clienteClient;
+
 
     @Override
     public List<PrestamoDto> getAllPrestamos() {
@@ -33,6 +37,13 @@ public class PrestamoServiceImpl implements PrestamoService {
     @Override
     public PrestamoDto createPrestamo(PrestamoDto prestamoDto) {
         prestamoDto.setId(null); // Asegurarse de que el ID sea nulo para crear un nuevo registro
+
+        //Verificar existencia del cliente
+        ClienteResponse clienteResponse = clienteClient.getClienteById(prestamoDto.getClienteId());
+        if(clienteResponse == null){
+            throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
+        }
+
         Prestamo prestamo = prestamoMapper.toEntity(prestamoDto);
         return prestamoMapper.toDto(prestamoRepository.save(prestamo));
     }
@@ -42,6 +53,13 @@ public class PrestamoServiceImpl implements PrestamoService {
         Prestamo prestamoFound = prestamoRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Préstamo no encontrado con id: " + id)
         );
+
+        //Verificar existencia del cliente
+        ClienteResponse clienteResponse = clienteClient.getClienteById(prestamoDto.getClienteId());
+        if(clienteResponse == null){
+            throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
+        }
+
         prestamoFound.setClienteId(prestamoDto.getClienteId());
         prestamoFound.setCuentaId(prestamoDto.getCuentaId());
         prestamoFound.setMonto(prestamoDto.getMonto());
