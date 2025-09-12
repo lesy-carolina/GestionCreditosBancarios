@@ -29,4 +29,13 @@ public class ExceptionHandleController {
         );
         return ResponseEntity.status(error.getStatus()).body(error);
     }
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<?> globalExceptionHandler(RuntimeException e) {
+        ErrorResponse error = new ErrorResponse(
+                HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                e.getMessage(),
+                LocalDateTime.now().toString()
+        );
+        return ResponseEntity.status(error.getStatus()).body(error);
+    }
 }
