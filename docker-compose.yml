@@ -43,7 +43,43 @@ services:
       volumes:
 
         - pgdata:/var/lib/postgresql/data2
+  db-transacciones:
 
+    image: postgres:15
+
+    environment:
+
+      POSTGRES_USER: postgres
+
+      POSTGRES_PASSWORD: postgres
+
+      POSTGRES_DB: db_transacciones
+
+    ports:
+
+      - "5442:5432"
+    volumes:
+
+      - pgdata:/var/lib/postgresql/data3
+
+  db-cuentas:
+
+    image: postgres:15
+
+    environment:
+
+      POSTGRES_USER: postgres
+
+      POSTGRES_PASSWORD: postgres
+
+      POSTGRES_DB: db_cuentas
+
+    ports:
+
+      - "5443:5432"
+    volumes:
+
+      - pgdata:/var/lib/postgresql/data4
 volumes:
 
   pgdata:
