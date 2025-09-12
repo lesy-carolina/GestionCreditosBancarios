@@ -4,6 +4,7 @@ package org.nttdata.com.servicioclientes.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioclientes.dto.ClienteRequest;
 import org.nttdata.com.servicioclientes.dto.ClienteResponse;
+import org.nttdata.com.servicioclientes.exception.ResourceNotFound;
 import org.nttdata.com.servicioclientes.model.Cliente;
 import org.nttdata.com.servicioclientes.repository.ClienteRepository;
 import org.nttdata.com.servicioclientes.service.ClienteService;
@@ -84,7 +85,7 @@ public class ClienteServiceImpl implements ClienteService {
         Cliente cliente = clienteRepository.findById(id)
                 .orElseThrow(() -> {
                     logger.error("Cliente no encontrado con ID: {}", id);
-                    return new RuntimeException("Cliente no encontrado con ID: " + id);
+                    return new ResourceNotFound("Cliente no encontrado con ID: " + id);
                 });
 
         logger.info("Cliente encontrado: {}", cliente.getNombre());
