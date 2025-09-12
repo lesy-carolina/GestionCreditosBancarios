@@ -14,23 +14,23 @@ public class EstadoPrestamoController {
     private final EstadoPrestamoService estadoPrestamoService;
 
     @GetMapping
-    private ResponseEntity<?> listarEstadoPrestamos() {
+    public ResponseEntity<?> listarEstadoPrestamos() {
         return ResponseEntity.ok(estadoPrestamoService.getAllEstadosPrestamo());
     }
     @GetMapping("/{id}")
-    private ResponseEntity<?> obtenerEstadoPrestamoPorId(@PathVariable Long id) {
+    public ResponseEntity<?> obtenerEstadoPrestamoPorId(@PathVariable Long id) {
         return ResponseEntity.ok(estadoPrestamoService.getEstadoPrestamoById(id));
     }
     @PostMapping
-    private ResponseEntity<?> crearEstadoPrestamo(@RequestBody EstadoPrestamoDto estado) {
+    public ResponseEntity<?> crearEstadoPrestamo(@RequestBody EstadoPrestamoDto estado) {
         return ResponseEntity.status(HttpStatus.CREATED).body(estadoPrestamoService.createEstadoPrestamo(estado));
     }
     @PutMapping("/{id}")
-    private ResponseEntity<?> actualizarEstadoPrestamo(@PathVariable Long id, @RequestBody EstadoPrestamoDto estado) {
+    public ResponseEntity<?> actualizarEstadoPrestamo(@PathVariable Long id, @RequestBody EstadoPrestamoDto estado) {
         return ResponseEntity.ok(estadoPrestamoService.updateEstadoPrestamo(id, estado));
     }
     @DeleteMapping("/{id}")
-    private ResponseEntity<?> eliminarEstadoPrestamo(@PathVariable Long id) {
+    public ResponseEntity<?> eliminarEstadoPrestamo(@PathVariable Long id) {
         estadoPrestamoService.deleteEstadoPrestamo(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
