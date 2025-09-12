@@ -1,0 +1,36 @@
+package org.nttdata.com.servicioprestamos.controller;
+
+import lombok.RequiredArgsConstructor;
+import org.nttdata.com.servicioprestamos.dto.CuotaRequest;
+import org.nttdata.com.servicioprestamos.service.CuotaService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/cuotas")
+public class CuotaController {
+    private final CuotaService cuotaService;
+
+    @GetMapping
+    public ResponseEntity<?> listarCuotas() {
+        return ResponseEntity.ok(cuotaService.getAllCuotas());
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<?> obtenerCuotaPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(cuotaService.getCuotaById(id));
+    }
+    @PostMapping
+    public ResponseEntity<?> crearCuota(@RequestBody CuotaRequest cuotaRequest) {
+        return ResponseEntity.ok(cuotaService.saveCuota(cuotaRequest));
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizarCuota(@PathVariable Long id, @RequestBody CuotaRequest cuotaRequest) {
+        return ResponseEntity.ok(cuotaService.updateCuota(id, cuotaRequest));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminarCuota(@PathVariable Long id) {
+        cuotaService.deleteCuota(id);
+        return ResponseEntity.noContent().build();
+    }
+}

@@ -1,7 +1,7 @@
 package org.nttdata.com.servicioprestamos.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.nttdata.com.servicioprestamos.dto.EstadoPrestamoDto;
+import org.nttdata.com.servicioprestamos.dto.EstadoPrestamoRequest;
 import org.nttdata.com.servicioprestamos.service.EstadoPrestamoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,11 +22,11 @@ public class EstadoPrestamoController {
         return ResponseEntity.ok(estadoPrestamoService.getEstadoPrestamoById(id));
     }
     @PostMapping
-    public ResponseEntity<?> crearEstadoPrestamo(@RequestBody EstadoPrestamoDto estado) {
+    public ResponseEntity<?> crearEstadoPrestamo(@RequestBody EstadoPrestamoRequest estado) {
         return ResponseEntity.status(HttpStatus.CREATED).body(estadoPrestamoService.createEstadoPrestamo(estado));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarEstadoPrestamo(@PathVariable Long id, @RequestBody EstadoPrestamoDto estado) {
+    public ResponseEntity<?> actualizarEstadoPrestamo(@PathVariable Long id, @RequestBody EstadoPrestamoRequest estado) {
         return ResponseEntity.ok(estadoPrestamoService.updateEstadoPrestamo(id, estado));
     }
     @DeleteMapping("/{id}")

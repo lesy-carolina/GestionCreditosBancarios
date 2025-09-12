@@ -1,7 +1,7 @@
 package org.nttdata.com.servicioprestamos.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.nttdata.com.servicioprestamos.dto.PrestamoDto;
+import org.nttdata.com.servicioprestamos.dto.PrestamoRequest;
 import org.nttdata.com.servicioprestamos.service.PrestamoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,11 +22,11 @@ public class PrestamoController {
         return ResponseEntity.ok(prestamoService.getPrestamoById(id));
     }
     @PostMapping
-    public ResponseEntity<?> crearPrestamo(@RequestBody PrestamoDto prestamo) {
+    public ResponseEntity<?> crearPrestamo(@RequestBody PrestamoRequest prestamo) {
         return ResponseEntity.status(HttpStatus.CREATED).body(prestamoService.createPrestamo(prestamo));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarPrestamo(@PathVariable Long id, @RequestBody PrestamoDto prestamo) {
+    public ResponseEntity<?> actualizarPrestamo(@PathVariable Long id, @RequestBody PrestamoRequest prestamo) {
         return ResponseEntity.ok(prestamoService.updatePrestamo(id, prestamo));
     }
     @DeleteMapping("/{id}")
