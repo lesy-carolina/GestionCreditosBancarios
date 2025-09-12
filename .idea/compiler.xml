@@ -9,16 +9,6 @@
         <module name="api-gateway" />
         <module name="ServicioEureka" />
       </profile>
-      <profile name="Annotation profile for ServicioClientes" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="ServicioClientes" />
-        <module name="ServicioCuentas" />
-      </profile>
       <profile name="Annotation profile for ServicioPrestamos" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -31,6 +21,17 @@
         </processorPath>
         <module name="ServicioPrestamos" />
       </profile>
+      <profile name="Annotation profile for ServicioTransacciones" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="ServicioTransacciones" />
+        <module name="ServicioClientes" />
+        <module name="ServicioCuentas" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -39,6 +40,7 @@
       <module name="ServicioCuentas" options="-parameters" />
       <module name="ServicioEureka" options="-parameters" />
       <module name="ServicioPrestamos" options="-parameters" />
+      <module name="ServicioTransacciones" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
     </option>
   </component>
