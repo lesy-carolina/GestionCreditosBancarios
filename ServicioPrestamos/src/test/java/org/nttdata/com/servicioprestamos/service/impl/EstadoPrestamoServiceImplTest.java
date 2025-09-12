@@ -5,7 +5,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.nttdata.com.servicioprestamos.dto.EstadoPrestamoDto;
+import org.nttdata.com.servicioprestamos.dto.EstadoPrestamoResponse;
 import org.nttdata.com.servicioprestamos.models.EstadoPrestamo;
 import org.nttdata.com.servicioprestamos.repository.EstadoPrestamoRepository;
 import org.nttdata.com.servicioprestamos.util.EstadoPrestamoMapper;
@@ -31,12 +31,12 @@ public class EstadoPrestamoServiceImplTest {
     @Test
     void getAllEstadosPrestamo_ReturnsListOfEstadoPrestamoDto() {
         List<EstadoPrestamo> estados = List.of(EstadoPrestamo.builder().id(1L).nombre("Aprobado").build(), EstadoPrestamo.builder().id(2L).nombre("Rechazado").build());
-        List<EstadoPrestamoDto> estadosDto = List.of(new EstadoPrestamoDto(1L, "Aprobado"), new EstadoPrestamoDto(2L, "Rechazado"));
+        List<EstadoPrestamoResponse> estadosDto = List.of(new EstadoPrestamoResponse(1L, "Aprobado"), new EstadoPrestamoResponse(2L, "Rechazado"));
 
         when(estadoPrestamoRepository.findAll()).thenReturn(estados);
         when(estadoPrestamoMapper.toDtoList(estados)).thenReturn(estadosDto);
 
-        List<EstadoPrestamoDto> result = estadoPrestamoService.getAllEstadosPrestamo();
+        List<EstadoPrestamoResponse> result = estadoPrestamoService.getAllEstadosPrestamo();
 
         assertEquals(estadosDto, result);
         verify(estadoPrestamoRepository).findAll();
@@ -46,13 +46,13 @@ public class EstadoPrestamoServiceImplTest {
     void getEstadoPrestamoById_ExistingId_ReturnsEstadoPrestamoDto() {
         Long id = 1L;
         EstadoPrestamo estado = EstadoPrestamo.builder().id(id).nombre("Aprobado").build();
-        EstadoPrestamoDto estadoDto = new EstadoPrestamoDto(id, "Aprobado");
+        EstadoPrestamoResponse estadoDto = new EstadoPrestamoResponse(id, "Aprobado");
 
 
         when(estadoPrestamoRepository.findById(id)).thenReturn(Optional.of(estado));
         when(estadoPrestamoMapper.toDto(estado)).thenReturn(estadoDto);
 
-        EstadoPrestamoDto result = estadoPrestamoService.getEstadoPrestamoById(id);
+        EstadoPrestamoResponse result = estadoPrestamoService.getEstadoPrestamoById(id);
         assertEquals(estadoDto, result);
         verify(estadoPrestamoRepository).findById(id);
         verify(estadoPrestamoMapper).toDto(estado);

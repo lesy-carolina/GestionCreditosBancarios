@@ -5,7 +5,8 @@ import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.client.ClienteClient;
 import org.nttdata.com.servicioprestamos.client.dto.ClienteResponse;
-import org.nttdata.com.servicioprestamos.dto.PrestamoDto;
+import org.nttdata.com.servicioprestamos.dto.PrestamoRequest;
+import org.nttdata.com.servicioprestamos.dto.PrestamoResponse;
 import org.nttdata.com.servicioprestamos.exception.ResourceNotFound;
 import org.nttdata.com.servicioprestamos.models.Prestamo;
 import org.nttdata.com.servicioprestamos.repository.PrestamoRepository;
@@ -28,20 +29,19 @@ public class PrestamoServiceImpl implements PrestamoService {
 
 
     @Override
-    public List<PrestamoDto> getAllPrestamos() {
+    public List<PrestamoResponse> getAllPrestamos() {
         return prestamoMapper.toDtoList(prestamoRepository.findAll());
     }
 
     @Override
-    public PrestamoDto getPrestamoById(Long id) {
+    public PrestamoResponse getPrestamoById(Long id) {
         return prestamoMapper.toDto(prestamoRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Préstamo no encontrado con id: " + id)));
     }
 
     @Override
     @CircuitBreaker(name = CLIENTE_SERVICE_CB, fallbackMethod = "createPrestamoFallback")
-    public PrestamoDto createPrestamo(PrestamoDto prestamoDto) {
-        prestamoDto.setId(null); // Asegurarse de que el ID sea nulo para crear un nuevo registro
+    public PrestamoResponse createPrestamo(PrestamoRequest prestamoDto) {
 
         //Verificar existencia del cliente
         ClienteResponse clienteResponse;
@@ -58,12 +58,12 @@ public class PrestamoServiceImpl implements PrestamoService {
         return prestamoMapper.toDto(prestamoRepository.save(prestamo));
     }
 
-    public PrestamoDto createPrestamoFallback(PrestamoDto prestamoDto, Throwable ex) {
+    public PrestamoResponse createPrestamoFallback(PrestamoRequest prestamoDto, Throwable ex) {
         throw new RuntimeException("El servicio de clientes no está disponible. Intente más tarde", ex);
     }
 
     @Override
-    public PrestamoDto updatePrestamo(Long id, PrestamoDto prestamoDto) {
+    public PrestamoResponse updatePrestamo(Long id, PrestamoRequest prestamoDto) {
         Prestamo prestamoFound = prestamoRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Préstamo no encontrado con id: " + id)
         );

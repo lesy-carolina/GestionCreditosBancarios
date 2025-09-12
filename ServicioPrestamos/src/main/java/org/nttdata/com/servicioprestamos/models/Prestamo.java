@@ -9,6 +9,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -30,4 +31,7 @@ public class Prestamo {
     @Temporal(TemporalType.DATE)
     @ColumnDefault(value = "CURRENT_DATE")
     private Date fechaDesembolso;
+
+    @OneToMany(mappedBy = "prestamo")
+    private List<Cuota> cuotas;
 }
