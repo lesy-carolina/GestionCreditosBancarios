@@ -1,0 +1,37 @@
+package org.nttdata.com.servicioprestamos.controller;
+
+import lombok.RequiredArgsConstructor;
+import org.nttdata.com.servicioprestamos.dto.PrestamoDto;
+import org.nttdata.com.servicioprestamos.service.PrestamoService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/prestamos")
+@RequiredArgsConstructor
+public class PrestamoController {
+    private final PrestamoService prestamoService;
+
+    @GetMapping
+    public ResponseEntity<?> listarPrestamos() {
+        return ResponseEntity.ok(prestamoService.getAllPrestamos());
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<?> obtenerPrestamoPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(prestamoService.getPrestamoById(id));
+    }
+    @PostMapping
+    public ResponseEntity<?> crearPrestamo(@RequestBody PrestamoDto prestamo) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(prestamoService.createPrestamo(prestamo));
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizarPrestamo(@PathVariable Long id, @RequestBody PrestamoDto prestamo) {
+        return ResponseEntity.ok(prestamoService.updatePrestamo(id, prestamo));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminarPrestamo(@PathVariable Long id) {
+        prestamoService.deletePrestamo(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+}
