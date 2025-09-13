@@ -63,6 +63,14 @@ public class PrestamoServiceImpl implements PrestamoService {
             throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
         }
 
+        //Verificacion existencia de cuenta
+
+
+        //Evaluacion credito
+
+        //Generar prestamo
+
+
         Prestamo prestamo = prestamoMapper.toEntity(prestamoDto);
         prestamo.setEstadoPrestamo(estadoPrestamoService.getEstadoPrestamoEntityById(prestamoDto.getEstadoPrestamoId()));
         return prestamoMapper.toDto(prestamoRepository.save(prestamo));

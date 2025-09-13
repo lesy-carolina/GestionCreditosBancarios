@@ -39,6 +39,13 @@ public class CuotaServiceImpl implements CuotaService {
     }
 
     @Override
+    public CuotaResponse pagarCuota(Long id, Long cuentaId) {
+
+        //Realizar meotdo pagar cuota
+        return null;
+    }
+
+    @Override
     public CuotaResponse saveCuota(CuotaRequest cuotaRequest) {
         Cuota cuota = cuotaMapper.toEntity(cuotaRequest);
         cuota.setEstadoCuota(estadoCuotaService.getEstadoCuotaEntityById(cuotaRequest.getEstadoCuotaId()));
