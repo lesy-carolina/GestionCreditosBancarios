@@ -1,4 +1,4 @@
-package org.nttdata.com.serviciocuentas.dto;
+package org.nttdata.com.serviciotransacciones.client.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,8 +13,8 @@ import java.math.BigDecimal;
 public class CuentaResponse {
     private Long id;
     private Long clienteId;
-    private TipoCuentaResponse tipoCuenta;
-    private EstadoCuentaResponse estadoCuenta;
+    private Long tipoCuentaId;
+    private Long estadoCuentaId;
     private BigDecimal saldo;
 
 }

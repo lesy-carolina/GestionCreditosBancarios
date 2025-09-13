@@ -11,4 +11,6 @@ public interface TransaccionService {
     TransaccionResponse createTransaccion(TransaccionRequest transaccionRequest);
     TransaccionResponse updateTransaccion(Long id, TransaccionRequest transaccionRequest);
     void deleteTransaccion(Long id);
+
+    List<TransaccionResponse> getTransaccionesByCuentaId(Long cuentaId);
 }

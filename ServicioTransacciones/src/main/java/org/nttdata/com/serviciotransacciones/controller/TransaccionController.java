@@ -17,6 +17,10 @@ public class TransaccionController {
     public ResponseEntity<?> getAllTransacciones() {
         return ResponseEntity.ok(transaccionService.getAllTransacciones());
     }
+    @GetMapping("/cuenta/{cuentaId}")
+    public ResponseEntity<?> getTransaccionesByCuentaId(@PathVariable Long cuentaId) {
+        return ResponseEntity.ok(transaccionService.getTransaccionesByCuentaId(cuentaId));
+    }
     @GetMapping("/{id}")
     public ResponseEntity<?> getTransaccionById(@PathVariable Long id) {
         return ResponseEntity.ok(transaccionService.getTransaccionById(id));
