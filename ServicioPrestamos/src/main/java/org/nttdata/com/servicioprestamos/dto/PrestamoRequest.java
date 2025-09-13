@@ -17,6 +17,6 @@ public class PrestamoRequest {
     private BigDecimal monto;
     private Integer plazoMeses;
     private BigDecimal tasaInteres;
-    private EstadoPrestamoRequest estadoPrestamo;
+    private Long estadoPrestamoId;
     private Date fechaDesembolso;
 }
