@@ -10,7 +10,7 @@
         <module name="api-gateway" />
         <module name="ServicioEureka" />
       </profile>
-      <profile name="Annotation profile for ServicioTransacciones" enabled="true">
+      <profile name="Annotation profile for ServicioCuentas" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

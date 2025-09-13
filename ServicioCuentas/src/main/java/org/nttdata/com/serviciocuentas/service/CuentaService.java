@@ -14,5 +14,5 @@ public interface CuentaService {
     CuentaResponse actualizarCuenta(Long id, CuentaRequest request);
     void eliminarCuenta(Long id);
     CuentaResponse actualizarSaldo(Long id, BigDecimal nuevoSaldo);
-    CuentaResponse cambiarEstadoCuenta(Long id, String nuevoEstado);
+    CuentaResponse cambiarEstadoCuenta(Long id, Long estadoCuentaId);
 }

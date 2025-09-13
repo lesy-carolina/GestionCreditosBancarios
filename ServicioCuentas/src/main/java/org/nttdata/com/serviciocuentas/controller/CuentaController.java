@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/cuentas")
+@RequestMapping("/cuentas")
 public class CuentaController {
 
     private static final Logger logger = LoggerFactory.getLogger(CuentaController.class);
@@ -24,7 +24,7 @@ public class CuentaController {
 
     @PostMapping
     public ResponseEntity<?> crearCuenta(@RequestBody CuentaRequest request) {
-        logger.info("POST /api/cuentas - Crear nueva cuenta");
+        logger.info("POST /cuentas - Crear nueva cuenta");
 
         try {
             CuentaResponse response = cuentaService.crearCuenta(request);
@@ -32,112 +32,112 @@ public class CuentaController {
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
         } catch (Exception e) {
-            logger.error("Error en POST /api/cuentas: {}", e.getMessage());
+            logger.error("Error en POST /cuentas: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> obtenerCuenta(@PathVariable Long id) {
-        logger.info("GET /api/cuentas/{} - Obtener cuenta", id);
+        logger.info("GET /cuentas/{} - Obtener cuenta", id);
 
         try {
             CuentaResponse response = cuentaService.obtenerCuentaPorId(id);
             return ResponseEntity.ok(response);
 
         } catch (Exception e) {
-            logger.error("Error en GET /api/cuentas/{}: {}", id, e.getMessage());
+            logger.error("Error en GET /cuentas/{}: {}", id, e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
 
     @GetMapping("/cliente/{idCliente}")
     public ResponseEntity<?> obtenerCuentasPorCliente(@PathVariable Long idCliente) {
-        logger.info("GET /api/cuentas/cliente/{} - Obtener cuentas por cliente", idCliente);
+        logger.info("GET /cuentas/cliente/{} - Obtener cuentas por cliente", idCliente);
 
         try {
             List<CuentaResponse> responses = cuentaService.obtenerCuentasPorCliente(idCliente);
             return ResponseEntity.ok(responses);
 
         } catch (Exception e) {
-            logger.error("Error en GET /api/cuentas/cliente/{}: {}", idCliente, e.getMessage());
+            logger.error("Error en GET /cuentas/cliente/{}: {}", idCliente, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @GetMapping
     public ResponseEntity<?> obtenerTodasCuentas() {
-        logger.info("GET /api/cuentas - Obtener todas las cuentas");
+        logger.info("GET /cuentas - Obtener todas las cuentas");
 
         try {
             List<CuentaResponse> responses = cuentaService.obtenerTodasCuentas();
             return ResponseEntity.ok(responses);
 
         } catch (Exception e) {
-            logger.error("Error en GET /api/cuentas: {}", e.getMessage());
+            logger.error("Error en GET /cuentas: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarCuenta(@PathVariable Long id, @RequestBody CuentaRequest request) {
-        logger.info("PUT /api/cuentas/{} - Actualizar cuenta", id);
+        logger.info("PUT /cuentas/{} - Actualizar cuenta", id);
 
         try {
             CuentaResponse response = cuentaService.actualizarCuenta(id, request);
             return ResponseEntity.ok(response);
 
         } catch (Exception e) {
-            logger.error("Error en PUT /api/cuentas/{}: {}", id, e.getMessage());
+            logger.error("Error en PUT /cuentas/{}: {}", id, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarCuenta(@PathVariable Long id) {
-        logger.info("DELETE /api/cuentas/{} - Eliminar cuenta", id);
+        logger.info("DELETE /cuentas/{} - Eliminar cuenta", id);
 
         try {
             cuentaService.eliminarCuenta(id);
             return ResponseEntity.noContent().build();
 
         } catch (Exception e) {
-            logger.error("Error en DELETE /api/cuentas/{}: {}", id, e.getMessage());
+            logger.error("Error en DELETE /cuentas/{}: {}", id, e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
 
     @PatchMapping("/{id}/saldo")
     public ResponseEntity<?> actualizarSaldo(@PathVariable Long id, @RequestParam BigDecimal saldo) {
-        logger.info("PATCH /api/cuentas/{}/saldo - Actualizar saldo: {}", id, saldo);
+        logger.info("PATCH /cuentas/{}/saldo - Actualizar saldo: {}", id, saldo);
 
         try {
             CuentaResponse response = cuentaService.actualizarSaldo(id, saldo);
             return ResponseEntity.ok(response);
 
         } catch (Exception e) {
-            logger.error("Error en PATCH /api/cuentas/{}/saldo: {}", id, e.getMessage());
+            logger.error("Error en PATCH /cuentas/{}/saldo: {}", id, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @PatchMapping("/{id}/estado")
-    public ResponseEntity<?> cambiarEstadoCuenta(@PathVariable Long id, @RequestParam String estado) {
-        logger.info("PATCH /api/cuentas/{}/estado - Cambiar estado: {}", id, estado);
+    public ResponseEntity<?> cambiarEstadoCuenta(@PathVariable Long id, @RequestParam Long estadoCuentaId) {
+        logger.info("PATCH /cuentas/{}/estado - Cambiar estado: {}", id, estadoCuentaId);
 
         try {
-            CuentaResponse response = cuentaService.cambiarEstadoCuenta(id, estado);
+            CuentaResponse response = cuentaService.cambiarEstadoCuenta(id, estadoCuentaId);
             return ResponseEntity.ok(response);
 
         } catch (Exception e) {
-            logger.error("Error en PATCH /api/cuentas/{}/estado: {}", id, e.getMessage());
+            logger.error("Error en PATCH /cuentas/{}/estado: {}", id, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @GetMapping("/health")
     public ResponseEntity<String> healthCheck() {
-        logger.info("GET /api/cuentas/health - Health check");
+        logger.info("GET /cuentas/health - Health check");
         return ResponseEntity.ok("Servicio de Cuentas está funcionando correctamente");
     }
 }

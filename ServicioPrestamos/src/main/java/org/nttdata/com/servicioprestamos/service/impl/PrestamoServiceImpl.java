@@ -10,9 +10,7 @@ import org.nttdata.com.servicioprestamos.dto.PrestamoResponse;
 import org.nttdata.com.servicioprestamos.exception.ResourceNotFound;
 import org.nttdata.com.servicioprestamos.models.Prestamo;
 import org.nttdata.com.servicioprestamos.repository.PrestamoRepository;
-import org.nttdata.com.servicioprestamos.service.EstadoPrestamoService;
 import org.nttdata.com.servicioprestamos.service.PrestamoService;
-import org.nttdata.com.servicioprestamos.util.EstadoPrestamoMapper;
 import org.nttdata.com.servicioprestamos.util.PrestamoMapper;
 import org.springframework.stereotype.Service;
 
@@ -23,9 +21,7 @@ import java.util.List;
 public class PrestamoServiceImpl implements PrestamoService {
     private final PrestamoRepository prestamoRepository;
     private final PrestamoMapper prestamoMapper;
-    private final EstadoPrestamoMapper estadoPrestamoMapper;
     private final ClienteClient clienteClient;
-    private final EstadoPrestamoService estadoPrestamoService;
 
     private static final String CLIENTE_SERVICE_CB = "clienteService";
 
@@ -71,9 +67,7 @@ public class PrestamoServiceImpl implements PrestamoService {
         //Generar prestamo
 
 
-        Prestamo prestamo = prestamoMapper.toEntity(prestamoDto);
-        prestamo.setEstadoPrestamo(estadoPrestamoService.getEstadoPrestamoEntityById(prestamoDto.getEstadoPrestamoId()));
-        return prestamoMapper.toDto(prestamoRepository.save(prestamo));
+        return prestamoMapper.toDto(prestamoRepository.save(prestamoMapper.toEntity(prestamoDto)));
     }
 
     public PrestamoResponse createPrestamoFallback(PrestamoRequest prestamoDto, Throwable ex) {
@@ -102,7 +96,7 @@ public class PrestamoServiceImpl implements PrestamoService {
         prestamoFound.setMonto(prestamoDto.getMonto());
         prestamoFound.setPlazoMeses(prestamoDto.getPlazoMeses());
         prestamoFound.setTasaInteres(prestamoDto.getTasaInteres());
-        prestamoFound.setEstadoPrestamo(estadoPrestamoService.getEstadoPrestamoEntityById(prestamoDto.getEstadoPrestamoId()));
+        prestamoFound.setEstadoPrestamo(prestamoMapper.toEntity(prestamoDto).getEstadoPrestamo());
         prestamoFound.setFechaDesembolso(prestamoDto.getFechaDesembolso());
         return prestamoMapper.toDto(prestamoRepository.save(prestamoFound));
     }
