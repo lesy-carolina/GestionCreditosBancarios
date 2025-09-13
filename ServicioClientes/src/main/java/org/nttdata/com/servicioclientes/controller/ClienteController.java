@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/clientes")
+@RequestMapping("/clientes")
 @RequiredArgsConstructor
 public class ClienteController {
     private final ClienteService clienteService;
@@ -48,7 +48,7 @@ public class ClienteController {
         return ResponseEntity.ok(response);
     }
 
-    @DeleteMapping("/eliminar/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarCliente(@PathVariable Long id) {
         try {
             clienteService.eliminarCliente(id);

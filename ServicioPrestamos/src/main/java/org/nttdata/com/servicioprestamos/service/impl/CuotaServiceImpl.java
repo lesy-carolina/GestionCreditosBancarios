@@ -8,8 +8,6 @@ import org.nttdata.com.servicioprestamos.models.Cuota;
 import org.nttdata.com.servicioprestamos.repository.CuotaRepository;
 import org.nttdata.com.servicioprestamos.service.CuotaService;
 import org.nttdata.com.servicioprestamos.util.CuotaMapper;
-import org.nttdata.com.servicioprestamos.util.EstadoCuotaMapper;
-import org.nttdata.com.servicioprestamos.util.PrestamoMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,8 +17,6 @@ import java.util.List;
 public class CuotaServiceImpl implements CuotaService {
     private final CuotaRepository cuotaRepository;
     private final CuotaMapper cuotaMapper;
-    private final EstadoCuotaMapper estadoCuotaMapper;
-    private final PrestamoMapper prestamoMapper;
 
     @Override
     public List<CuotaResponse> getAllCuotas() {
@@ -35,21 +31,30 @@ public class CuotaServiceImpl implements CuotaService {
     }
 
     @Override
+    public CuotaResponse pagarCuota(Long id, Long cuentaId) {
+
+        //Realizar meotdo pagar cuota
+        return null;
+    }
+
+    @Override
     public CuotaResponse saveCuota(CuotaRequest cuotaRequest) {
         return cuotaMapper.toDto(cuotaRepository.save(cuotaMapper.toEntity(cuotaRequest)));
     }
 
     @Override
     public CuotaResponse updateCuota(Long id, CuotaRequest cuotaRequest) {
+        Cuota cuotaEntityRequest = cuotaMapper.toEntity(cuotaRequest);
+
         Cuota cuotaFound = cuotaRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Cuota no encontrada con id: " + id)
         );
-        cuotaFound.setPrestamo(prestamoMapper.toEntity(cuotaRequest.getPrestamo()));
+        cuotaFound.setPrestamo(cuotaEntityRequest.getPrestamo());
         cuotaFound.setNumero(cuotaRequest.getNumero());
         cuotaFound.setMonto(cuotaRequest.getMonto());
         cuotaFound.setFechaVencimiento(cuotaRequest.getFechaVencimiento());
         cuotaFound.setMonto(cuotaRequest.getMonto());
-        cuotaFound.setEstadoCuota(estadoCuotaMapper.toEntity(cuotaRequest.getEstadoCuota()));
+        cuotaFound.setEstadoCuota(cuotaEntityRequest.getEstadoCuota());
 
         return cuotaMapper.toDto(cuotaRepository.save(cuotaFound));
     }

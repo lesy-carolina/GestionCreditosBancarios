@@ -32,6 +32,13 @@ public class EstadoPrestamoServiceImpl implements EstadoPrestamoService {
     }
 
     @Override
+    public EstadoPrestamo getEstadoPrestamoEntityById(Long id) {
+        return estadoPrestamoRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFound("Estado de préstamo no encontrado con id: " + id)
+        );
+    }
+
+    @Override
     public EstadoPrestamoResponse createEstadoPrestamo(EstadoPrestamoRequest estadoPrestamoDto) {
         EstadoPrestamo estadoPrestamo = estadoPrestamoMapper.toEntity(estadoPrestamoDto);
         return estadoPrestamoMapper.toDto(estadoPrestamoRepository.save(estadoPrestamo));
