@@ -1,7 +1,5 @@
 package org.nttdata.com.serviciocuentas.model;
-
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 
 @Entity
