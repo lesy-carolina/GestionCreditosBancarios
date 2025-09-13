@@ -10,6 +10,7 @@ import org.nttdata.com.servicioprestamos.dto.PrestamoResponse;
 import org.nttdata.com.servicioprestamos.exception.ResourceNotFound;
 import org.nttdata.com.servicioprestamos.models.Prestamo;
 import org.nttdata.com.servicioprestamos.repository.PrestamoRepository;
+import org.nttdata.com.servicioprestamos.service.EstadoPrestamoService;
 import org.nttdata.com.servicioprestamos.service.PrestamoService;
 import org.nttdata.com.servicioprestamos.util.EstadoPrestamoMapper;
 import org.nttdata.com.servicioprestamos.util.PrestamoMapper;
@@ -24,6 +25,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     private final PrestamoMapper prestamoMapper;
     private final EstadoPrestamoMapper estadoPrestamoMapper;
     private final ClienteClient clienteClient;
+    private final EstadoPrestamoService estadoPrestamoService;
 
     private static final String CLIENTE_SERVICE_CB = "clienteService";
 
@@ -37,6 +39,13 @@ public class PrestamoServiceImpl implements PrestamoService {
     public PrestamoResponse getPrestamoById(Long id) {
         return prestamoMapper.toDto(prestamoRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Préstamo no encontrado con id: " + id)));
+    }
+
+    @Override
+    public Prestamo getPrestamoEntityById(Long id) {
+        return prestamoRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFound("Préstamo no encontrado con id: " + id)
+        );
     }
 
     @Override
@@ -55,11 +64,12 @@ public class PrestamoServiceImpl implements PrestamoService {
         }
 
         Prestamo prestamo = prestamoMapper.toEntity(prestamoDto);
+        prestamo.setEstadoPrestamo(estadoPrestamoService.getEstadoPrestamoEntityById(prestamoDto.getEstadoPrestamoId()));
         return prestamoMapper.toDto(prestamoRepository.save(prestamo));
     }
 
     public PrestamoResponse createPrestamoFallback(PrestamoRequest prestamoDto, Throwable ex) {
-        throw new RuntimeException("El servicio de clientes no está disponible. Intente más tarde", ex);
+        throw new RuntimeException("El servicio de clientes no está disponible. Intente más tarde" + ex);
     }
 
     @Override
@@ -84,7 +94,7 @@ public class PrestamoServiceImpl implements PrestamoService {
         prestamoFound.setMonto(prestamoDto.getMonto());
         prestamoFound.setPlazoMeses(prestamoDto.getPlazoMeses());
         prestamoFound.setTasaInteres(prestamoDto.getTasaInteres());
-        prestamoFound.setEstadoPrestamo(estadoPrestamoMapper.toEntity(prestamoDto.getEstadoPrestamo()));
+        prestamoFound.setEstadoPrestamo(estadoPrestamoService.getEstadoPrestamoEntityById(prestamoDto.getEstadoPrestamoId()));
         prestamoFound.setFechaDesembolso(prestamoDto.getFechaDesembolso());
         return prestamoMapper.toDto(prestamoRepository.save(prestamoFound));
     }

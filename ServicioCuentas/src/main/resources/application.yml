@@ -2,7 +2,7 @@ spring:
   application:
     name: ServicioCuentas
   datasource:
-    url: jdbc:postgresql://localhost:5443/db-cuentas
+    url: jdbc:postgresql://localhost:5443/db_cuentas
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -12,17 +12,17 @@ spring:
     show-sql: true
 
     # Para cargar data.sql al inicio
-#    defer-datasource-initialization: true
-#
-#  sql:
-#    init:
-#      mode: always
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
 
 
 
 
 server:
-  port: 8087
+  port: 8088
 
 eureka:
   client:

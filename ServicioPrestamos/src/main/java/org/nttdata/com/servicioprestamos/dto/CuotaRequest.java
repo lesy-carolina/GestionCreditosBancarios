@@ -13,9 +13,9 @@ import java.util.Date;
 @Builder
 public class CuotaRequest {
     private Long id;
-    private PrestamoRequest prestamo;
+    private Long prestamoId;
     private Integer numero;
     private Date fechaVencimiento;
     private Double monto;
-    private EstadoCuotaRequest estadoCuota;
+    private Long estadoCuotaId;
 }

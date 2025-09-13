@@ -31,6 +31,13 @@ public class EstadoCuotaServiceImpl implements EstadoCuotaService {
     }
 
     @Override
+    public EstadoCuota getEstadoCuotaEntityById(Long id) {
+        return estadoCuotaRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFound("Estado de cuota no encontrado con id: " + id)
+        );
+    }
+
+    @Override
     public EstadoCuotaResponse saveEstadoCuota(EstadoCuotaRequest estadoCuotaRequest) {
         return estadoCuotaMapper.toDto(estadoCuotaRepository.save(estadoCuotaMapper.toEntity(estadoCuotaRequest)));
     }
