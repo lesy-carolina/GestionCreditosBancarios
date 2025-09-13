@@ -1,80 +1,53 @@
-package org.nttdata.com.serviciocuentas.service;
+package org.nttdata.com.serviciocuentas.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.nttdata.com.serviciocuentas.dto.CuentaRequest;
 import org.nttdata.com.serviciocuentas.dto.CuentaResponse;
 import org.nttdata.com.serviciocuentas.model.Cuenta;
-import org.nttdata.com.serviciocuentas.model.EstadoCuenta;
-import org.nttdata.com.serviciocuentas.model.TipoCuenta;
 import org.nttdata.com.serviciocuentas.repository.CuentaRepository;
+import org.nttdata.com.serviciocuentas.service.CuentaService;
+import org.nttdata.com.serviciocuentas.service.EstadoCuentaService;
+import org.nttdata.com.serviciocuentas.util.CuentaMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class CuentaServiceImpl implements CuentaService {
 
     private static final Logger logger = LoggerFactory.getLogger(CuentaServiceImpl.class);
 
-    @Autowired
-    private CuentaRepository cuentaRepository;
+    private final CuentaRepository cuentaRepository;
+    private final CuentaMapper cuentaMapper;
+    private final EstadoCuentaService estadoCuentaService;
 
-    private CuentaResponse mapToResponse(Cuenta cuenta) {
-        if (cuenta == null) return null;
-
-        CuentaResponse response = new CuentaResponse();
-        response.setId(cuenta.getId());
-        response.setIdCliente(cuenta.getIdCliente());
-        response.setTipoCuenta(cuenta.getTipoCuenta().name());
-        response.setEstadoCuenta(cuenta.getEstadoCuenta().name());
-        response.setSaldo(cuenta.getSaldo());
-        return response;
-    }
-
-    private Cuenta mapToEntity(CuentaRequest request) {
-        if (request == null) return null;
-
-        Cuenta cuenta = new Cuenta();
-        cuenta.setIdCliente(request.getIdCliente());
-
-        // Convertir String a Enum con validación
-        try {
-            cuenta.setTipoCuenta(TipoCuenta.valueOf(request.getTipoCuenta().toUpperCase()));
-            cuenta.setEstadoCuenta(EstadoCuenta.valueOf(request.getEstadoCuenta().toUpperCase()));
-        } catch (IllegalArgumentException e) {
-            throw new RuntimeException("Tipo o estado de cuenta inválido: " + e.getMessage());
-        }
-
-        cuenta.setSaldo(request.getSaldo() != null ? request.getSaldo() : BigDecimal.ZERO);
-        return cuenta;
-    }
 
     @Override
     @Transactional
     public CuentaResponse crearCuenta(CuentaRequest request) {
-        logger.info("Creando cuenta para cliente ID: {}", request.getIdCliente());
+        logger.info("Creando cuenta para cliente ID: {}", request.getClienteId());
 
         try {
             // Validaciones
-            if (request.getIdCliente() == null) {
+            if (request.getClienteId() == null) {
                 throw new RuntimeException("ID de cliente es requerido");
             }
 
-            if (request.getTipoCuenta() == null || request.getEstadoCuenta() == null) {
+            if (request.getTipoCuentaId() == null || request.getEstadoCuentaId() == null) {
                 throw new RuntimeException("Tipo y estado de cuenta son requeridos");
             }
 
-            Cuenta cuenta = mapToEntity(request);
+            Cuenta cuenta = cuentaMapper.toEntity(request);
             Cuenta cuentaGuardada = cuentaRepository.save(cuenta);
             logger.info("Cuenta creada exitosamente ID: {}", cuentaGuardada.getId());
 
-            return mapToResponse(cuentaGuardada);
+            return cuentaMapper.toDto(cuentaGuardada);
 
         } catch (Exception e) {
             logger.error("Error al crear cuenta: {}", e.getMessage());
@@ -93,7 +66,7 @@ public class CuentaServiceImpl implements CuentaService {
             throw new RuntimeException("Cuenta no encontrada con ID: " + id);
         }
 
-        return mapToResponse(cuentaOpt.get());
+        return cuentaMapper.toDto(cuentaOpt.get());
     }
 
     @Override
@@ -101,12 +74,10 @@ public class CuentaServiceImpl implements CuentaService {
     public List<CuentaResponse> obtenerCuentasPorCliente(Long idCliente) {
         logger.info("Buscando cuentas para cliente ID: {}", idCliente);
 
-        List<Cuenta> cuentas = cuentaRepository.findByIdCliente(idCliente);
+        List<Cuenta> cuentas = cuentaRepository.findByClienteId(idCliente);
         logger.info("Encontradas {} cuentas para cliente ID: {}", cuentas.size(), idCliente);
 
-        return cuentas.stream()
-                .map(this::mapToResponse)
-                .collect(Collectors.toList());
+        return cuentaMapper.toDtoList(cuentas);
     }
 
     @Override
@@ -117,14 +88,13 @@ public class CuentaServiceImpl implements CuentaService {
         List<Cuenta> cuentas = cuentaRepository.findAll();
         logger.info("Total de cuentas encontradas: {}", cuentas.size());
 
-        return cuentas.stream()
-                .map(this::mapToResponse)
-                .collect(Collectors.toList());
+        return cuentaMapper.toDtoList(cuentas);
     }
 
     @Override
     @Transactional
     public CuentaResponse actualizarCuenta(Long id, CuentaRequest request) {
+        Cuenta cuentaRequest = cuentaMapper.toEntity(request);
         logger.info("Actualizando cuenta ID: {}", id);
 
         try {
@@ -136,12 +106,12 @@ public class CuentaServiceImpl implements CuentaService {
             Cuenta cuenta = cuentaOpt.get();
 
             // Actualizar solo campos proporcionados
-            if (request.getTipoCuenta() != null) {
-                cuenta.setTipoCuenta(TipoCuenta.valueOf(request.getTipoCuenta().toUpperCase()));
+            if (request.getTipoCuentaId() != null) {
+                cuenta.setTipoCuenta(cuentaRequest.getTipoCuenta());
             }
 
-            if (request.getEstadoCuenta() != null) {
-                cuenta.setEstadoCuenta(EstadoCuenta.valueOf(request.getEstadoCuenta().toUpperCase()));
+            if (request.getEstadoCuentaId() != null) {
+                cuenta.setEstadoCuenta(cuentaRequest.getEstadoCuenta());
             }
 
             if (request.getSaldo() != null) {
@@ -151,7 +121,7 @@ public class CuentaServiceImpl implements CuentaService {
             Cuenta cuentaActualizada = cuentaRepository.save(cuenta);
             logger.info("Cuenta actualizada exitosamente ID: {}", id);
 
-            return mapToResponse(cuentaActualizada);
+            return cuentaMapper.toDto(cuentaActualizada);
 
         } catch (Exception e) {
             logger.error("Error al actualizar cuenta ID {}: {}", id, e.getMessage());
@@ -195,7 +165,7 @@ public class CuentaServiceImpl implements CuentaService {
             Cuenta cuentaActualizada = cuentaRepository.save(cuenta);
             logger.info("Saldo actualizado exitosamente para cuenta ID: {}", id);
 
-            return mapToResponse(cuentaActualizada);
+            return cuentaMapper.toDto(cuentaActualizada);
 
         } catch (Exception e) {
             logger.error("Error al actualizar saldo cuenta ID {}: {}", id, e.getMessage());
@@ -205,8 +175,8 @@ public class CuentaServiceImpl implements CuentaService {
 
     @Override
     @Transactional
-    public CuentaResponse cambiarEstadoCuenta(Long id, String nuevoEstado) {
-        logger.info("Cambiando estado cuenta ID: {} - Nuevo estado: {}", id, nuevoEstado);
+    public CuentaResponse cambiarEstadoCuenta(Long id, Long estadoCuentaId) {
+        logger.info("Cambiando estado cuenta ID: {} - Nuevo estado: {}", id, estadoCuentaId);
 
         try {
             Optional<Cuenta> cuentaOpt = cuentaRepository.findById(id);
@@ -215,15 +185,16 @@ public class CuentaServiceImpl implements CuentaService {
             }
 
             Cuenta cuenta = cuentaOpt.get();
-            cuenta.setEstadoCuenta(EstadoCuenta.valueOf(nuevoEstado.toUpperCase()));
+
+            cuenta.setEstadoCuenta(estadoCuentaService.getEstadoCuentaEntityById(estadoCuentaId));
 
             Cuenta cuentaActualizada = cuentaRepository.save(cuenta);
             logger.info("Estado actualizado exitosamente para cuenta ID: {}", id);
 
-            return mapToResponse(cuentaActualizada);
+            return cuentaMapper.toDto(cuentaActualizada);
 
         } catch (IllegalArgumentException e) {
-            throw new RuntimeException("Estado de cuenta inválido: " + nuevoEstado);
+            throw new RuntimeException("Estado de cuenta inválido: " + estadoCuentaId);
         } catch (Exception e) {
             logger.error("Error al cambiar estado cuenta ID {}: {}", id, e.getMessage());
             throw new RuntimeException("Error al cambiar estado: " + e.getMessage());

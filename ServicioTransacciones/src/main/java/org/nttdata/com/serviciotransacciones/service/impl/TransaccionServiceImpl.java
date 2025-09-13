@@ -7,7 +7,6 @@ import org.nttdata.com.serviciotransacciones.exception.ResourceNotFound;
 import org.nttdata.com.serviciotransacciones.model.Transaccion;
 import org.nttdata.com.serviciotransacciones.repository.TransaccionRepository;
 import org.nttdata.com.serviciotransacciones.service.TransaccionService;
-import org.nttdata.com.serviciotransacciones.util.TipoTransaccionMapper;
 import org.nttdata.com.serviciotransacciones.util.TransaccionMapper;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +17,6 @@ import java.util.List;
 public class TransaccionServiceImpl implements TransaccionService {
     private final TransaccionRepository transaccionRepository;
     private final TransaccionMapper transaccionMapper;
-    private final TipoTransaccionMapper tipoTransaccionMapper;
 
     @Override
     public List<TransaccionResponse> getAllTransacciones() {
@@ -45,7 +43,7 @@ public class TransaccionServiceImpl implements TransaccionService {
                 () -> new ResourceNotFound("Transaccion no encontrada con id: " + id)
         );
         transaccionFound.setCuentaId(transaccionRequest.getCuentaId());
-        transaccionFound.setTipoTransaccion(tipoTransaccionMapper.toEntity(transaccionRequest.getTipoTransaccion()));
+        transaccionFound.setTipoTransaccion(transaccionMapper.toEntity(transaccionRequest).getTipoTransaccion());
         transaccionFound.setMonto(transaccionRequest.getMonto());
         transaccionFound.setFecha(transaccionRequest.getFecha());
         transaccionFound.setReferencia(transaccionRequest.getReferencia());

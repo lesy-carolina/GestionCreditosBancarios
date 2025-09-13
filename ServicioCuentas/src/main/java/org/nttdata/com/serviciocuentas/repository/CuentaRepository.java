@@ -15,7 +15,7 @@ import java.util.Optional;
 public interface CuentaRepository extends JpaRepository<Cuenta, Long> {
 
     // Buscar cuentas por cliente
-    List<Cuenta> findByIdCliente(Long idCliente);
+    List<Cuenta> findByClienteId(Long idCliente);
 
     // Buscar cuentas por tipo
     List<Cuenta> findByTipoCuenta(TipoCuenta tipoCuenta);
@@ -23,11 +23,8 @@ public interface CuentaRepository extends JpaRepository<Cuenta, Long> {
     // Buscar cuentas por estado
     List<Cuenta> findByEstadoCuenta(EstadoCuenta estadoCuenta);
 
-    // Buscar cuenta específica de un cliente
-    @Query("SELECT c FROM Cuenta c WHERE c.idCliente = :idCliente AND c.id = :idCuenta")
-    Optional<Cuenta> findByClienteAndCuentaId(@Param("idCliente") Long idCliente,
-                                              @Param("idCuenta") Long idCuenta);
+    Optional<Cuenta> findByClienteIdAndId(Long clienteId, Long id);
 
     // Verificar si cliente tiene cuenta de cierto tipo
-    boolean existsByIdClienteAndTipoCuenta(Long idCliente, TipoCuenta tipoCuenta);
+    boolean existsByClienteIdAndTipoCuenta(Long idCliente, TipoCuenta tipoCuenta);
 }
