@@ -5,21 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7f9d436-5115-4af4-bce6-6fa583df14ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/CuentaClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto/CuentaResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto/EstadoCuentaResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto/TipoCuentaResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/org/nttdata/com/apigateway/configuration/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/FeignClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/FeignClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/FeignClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/configuration/FeignClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioClientes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/ServicioClientesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/ServicioClientesApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/CuentaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/CuentaClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/impl/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/impl/ClienteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/ClienteClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/ClienteClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/TransaccionClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/TransaccionClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/CuentaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/CuentaClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -79,7 +81,7 @@
     "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
     "git-widget-placeholder": "feature/cloudSecurity",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto",
+    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,9 +93,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioPrestamos\src\main\java\org\nttdata\com\servicioprestamos\configuration" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioTransacciones\src\main\java\org\nttdata\com\serviciotransacciones\configuration" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioClientes\src\main\java\org\nttdata\com\servicioclientes\client\dto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.nttdata.com.serviciocuentas.configuration" />
       <recent name="org.nttdata.com.servicioclientes.client.dto" />
       <recent name="org.nttdata.com.servicioclientes.configuration" />
     </key>
@@ -178,7 +183,7 @@
       <workItem from="1757818469600" duration="1771000" />
       <workItem from="1757853128579" duration="3887000" />
       <workItem from="1757863987406" duration="703000" />
-      <workItem from="1757865108347" duration="1886000" />
+      <workItem from="1757865108347" duration="4511000" />
     </task>
     <servers />
   </component>

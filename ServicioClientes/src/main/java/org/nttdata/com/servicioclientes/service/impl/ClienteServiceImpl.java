@@ -231,6 +231,13 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public List<CuentaResponse> obtenerClienteConCuentas(Long idCliente) {
-        return List.of();
+        if (!clienteRepository.existsById(idCliente)) {
+            throw new ResourceNotFound("Cliente no encontrado con ID: " + idCliente);
+        }
+        try {
+            return cuentaClient.getCuentasByClienteId(idCliente);
+        } catch (Exception e) {
+            throw new RuntimeException("Error al obtener cuentas del cliente: " + e.getMessage());
+        }
     }
 }
