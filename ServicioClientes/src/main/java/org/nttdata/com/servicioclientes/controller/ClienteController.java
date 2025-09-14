@@ -33,6 +33,10 @@ public class ClienteController {
         List<ClienteResponse> responses = clienteService.obtenerTodosClientes();
         return ResponseEntity.ok(responses);
     }
+    @GetMapping("/{idCliente}/cuentas")
+    public ResponseEntity<?> obtenerClienteConCuentas(@PathVariable Long idCliente) {
+        return ResponseEntity.ok(clienteService.obtenerClienteConCuentas(idCliente));
+    }
 
     @GetMapping("/estado/{estado}")
     public ResponseEntity<List<ClienteResponse>> obtenerClientesPorEstado(
