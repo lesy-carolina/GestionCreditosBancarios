@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f9d436-5115-4af4-bce6-6fa583df14ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioClientes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioCuentas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioEureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioEureka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioEureka/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioEureka/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="e7f9d436-5115-4af4-bce6-6fa583df14ee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,6 +47,11 @@
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.ServicioClientesApplication.executor": "Run",
+    "Spring Boot.ServicioCuentasApplication.executor": "Run",
+    "Spring Boot.ServicioEurekaApplication.executor": "Run",
+    "Spring Boot.ServicioPrestamosApplication.executor": "Run",
+    "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
     "git-widget-placeholder": "feature/configServer",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -147,7 +132,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757818468286</updated>
-      <workItem from="1757818469600" duration="1323000" />
+      <workItem from="1757818469600" duration="1771000" />
     </task>
     <servers />
   </component>
