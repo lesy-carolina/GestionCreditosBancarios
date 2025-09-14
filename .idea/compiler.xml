@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
-        <module name="configServer" />
         <module name="ServicioEureka" />
+        <module name="configServer" />
       </profile>
       <profile name="Annotation profile for ServicioClientes" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -20,7 +20,7 @@
         </processorPath>
         <module name="ServicioClientes" />
       </profile>
-      <profile name="Annotation profile for ServicioCuentas" enabled="true">
+      <profile name="Annotation profile for ServicioTransacciones" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -35,6 +35,9 @@
         <module name="ServicioPrestamos" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="maven-archiver" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
