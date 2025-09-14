@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e7f9d436-5115-4af4-bce6-6fa583df14ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioEureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioEureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioEureka/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioEureka/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Frank18ci"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Frank18ci/GestionCreditosBancarios.git",
+    "accountId": "1a68f355-6baa-483a-b264-deae6e3f1497"
+  }
+}]]></component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="32fjLtjQD40u0t4J73HGXUVaCck" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "git-widget-placeholder": "feature/configServer",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="configServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.configserver.ConfigServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioClientesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioClientes" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioclientes.ServicioClientesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioCuentasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioCuentas" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.serviciocuentas.ServicioCuentasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioEureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioeureka.ServicioEurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioPrestamosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioPrestamos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioprestamos.ServicioPrestamosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioTransaccionesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioTransacciones" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.serviciotransacciones.ServicioTransaccionesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7f9d436-5115-4af4-bce6-6fa583df14ee" name="Changes" comment="" />
+      <created>1757818468286</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757818468286</updated>
+      <workItem from="1757818469600" duration="1323000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
