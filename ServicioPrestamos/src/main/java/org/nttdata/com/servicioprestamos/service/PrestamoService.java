@@ -1,13 +1,16 @@
 package org.nttdata.com.servicioprestamos.service;
 
-import org.nttdata.com.servicioprestamos.dto.PrestamoDto;
+import org.nttdata.com.servicioprestamos.dto.PrestamoRequest;
+import org.nttdata.com.servicioprestamos.dto.PrestamoResponse;
+import org.nttdata.com.servicioprestamos.models.Prestamo;
 
 import java.util.List;
 
 public interface PrestamoService {
-    List<PrestamoDto> getAllPrestamos();
-    PrestamoDto getPrestamoById(Long id);
-    PrestamoDto createPrestamo(PrestamoDto prestamoDto);
-    PrestamoDto updatePrestamo(Long id, PrestamoDto prestamoDto);
+    List<PrestamoResponse> getAllPrestamos();
+    PrestamoResponse getPrestamoById(Long id);
+    Prestamo getPrestamoEntityById(Long id);
+    PrestamoResponse createPrestamo(PrestamoRequest prestamoDto);
+    PrestamoResponse updatePrestamo(Long id, PrestamoRequest prestamoDto);
     void deletePrestamo(Long id);
 }

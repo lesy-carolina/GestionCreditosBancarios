@@ -1,7 +1,8 @@
 package org.nttdata.com.servicioprestamos.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.nttdata.com.servicioprestamos.dto.EstadoPrestamoDto;
+import org.nttdata.com.servicioprestamos.dto.EstadoPrestamoRequest;
+import org.nttdata.com.servicioprestamos.dto.EstadoPrestamoResponse;
 import org.nttdata.com.servicioprestamos.exception.ResourceNotFound;
 import org.nttdata.com.servicioprestamos.models.EstadoPrestamo;
 import org.nttdata.com.servicioprestamos.repository.EstadoPrestamoRepository;
@@ -19,26 +20,32 @@ public class EstadoPrestamoServiceImpl implements EstadoPrestamoService {
 
 
     @Override
-    public List<EstadoPrestamoDto> getAllEstadosPrestamo() {
+    public List<EstadoPrestamoResponse> getAllEstadosPrestamo() {
         return estadoPrestamoMapper.toDtoList(estadoPrestamoRepository.findAll());
     }
 
     @Override
-    public EstadoPrestamoDto getEstadoPrestamoById(Long id) {
+    public EstadoPrestamoResponse getEstadoPrestamoById(Long id) {
         return estadoPrestamoMapper.toDto(estadoPrestamoRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Estado de préstamo no encontrado con id: " + id)
         ));
     }
 
     @Override
-    public EstadoPrestamoDto createEstadoPrestamo(EstadoPrestamoDto estadoPrestamoDto) {
-        estadoPrestamoDto.setId(null); // Asegurarse de que el ID sea nulo para crear un nuevo registro
+    public EstadoPrestamo getEstadoPrestamoEntityById(Long id) {
+        return estadoPrestamoRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFound("Estado de préstamo no encontrado con id: " + id)
+        );
+    }
+
+    @Override
+    public EstadoPrestamoResponse createEstadoPrestamo(EstadoPrestamoRequest estadoPrestamoDto) {
         EstadoPrestamo estadoPrestamo = estadoPrestamoMapper.toEntity(estadoPrestamoDto);
         return estadoPrestamoMapper.toDto(estadoPrestamoRepository.save(estadoPrestamo));
     }
 
     @Override
-    public EstadoPrestamoDto updateEstadoPrestamo(Long id, EstadoPrestamoDto estadoPrestamoDto) {
+    public EstadoPrestamoResponse updateEstadoPrestamo(Long id, EstadoPrestamoRequest estadoPrestamoDto) {
         EstadoPrestamo estadoPRestamoFound = estadoPrestamoRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Estado de préstamo no encontrado con id: " + id)
         );

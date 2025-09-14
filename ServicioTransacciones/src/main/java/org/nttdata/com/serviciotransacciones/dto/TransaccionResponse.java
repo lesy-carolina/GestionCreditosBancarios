@@ -1,4 +1,4 @@
-package org.nttdata.com.servicioprestamos.dto;
+package org.nttdata.com.serviciotransacciones.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,13 +12,11 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PrestamoDto {
+public class TransaccionResponse {
     private Long id;
-    private Long clienteId;
     private Long cuentaId;
+    private TipoTransaccionResponse tipoTransaccion;
     private BigDecimal monto;
-    private Integer plazoMeses;
-    private BigDecimal tasaInteres;
-    private EstadoPrestamoDto estadoPrestamo;
-    private Date fechaDesembolso;
+    private Date fecha;
+    private String referencia;
 }

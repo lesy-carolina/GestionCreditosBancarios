@@ -1,4 +1,4 @@
-package org.nttdata.com.servicioprestamos.dto;
+package org.nttdata.com.serviciotransacciones.client.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class EstadoPrestamoDto {
+public class EstadoCuentaResponse {
     private Long id;
     private String nombre;
 }
