@@ -2,6 +2,8 @@ package org.nttdata.com.servicioclientes.service.impl;
 
 
 import lombok.RequiredArgsConstructor;
+import org.nttdata.com.servicioclientes.client.CuentaClient;
+import org.nttdata.com.servicioclientes.client.dto.CuentaResponse;
 import org.nttdata.com.servicioclientes.dto.ClienteRequest;
 import org.nttdata.com.servicioclientes.dto.ClienteResponse;
 import org.nttdata.com.servicioclientes.exception.ResourceNotFound;
@@ -22,6 +24,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ClienteServiceImpl implements ClienteService {
     private final ClienteRepository clienteRepository;
+    private final CuentaClient cuentaClient;
 
     private static final Logger logger = LoggerFactory.getLogger(ClienteServiceImpl.class);
 
@@ -224,5 +227,10 @@ public class ClienteServiceImpl implements ClienteService {
     @Transactional(readOnly = true)
     public boolean existeCliente(Long id) {
         return clienteRepository.existsById(id);
+    }
+
+    @Override
+    public List<CuentaResponse> obtenerClienteConCuentas(Long idCliente) {
+        return List.of();
     }
 }
