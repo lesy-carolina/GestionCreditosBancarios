@@ -1,5 +1,7 @@
 package org.nttdata.com.servicioprestamos.dto;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,10 +14,16 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class CuotaRequest {
-    private Long id;
+    @NotNull(message = "El ID del préstamo no puede ser nulo")
     private Long prestamoId;
+    @NotNull(message = "El número de cuota no puede ser nulo")
+    @Positive
     private Integer numero;
+    @NotNull(message = "La fecha de vencimiento no puede ser nula")
     private Date fechaVencimiento;
+    @NotNull(message = "El monto no puede ser nulo")
+    @Positive
     private Double monto;
+    @NotNull(message = "El ID del estado de la cuota no puede ser nulo")
     private Long estadoCuotaId;
 }

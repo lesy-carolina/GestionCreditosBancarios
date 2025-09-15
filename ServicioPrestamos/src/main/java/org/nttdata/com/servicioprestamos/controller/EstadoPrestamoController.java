@@ -1,5 +1,6 @@
 package org.nttdata.com.servicioprestamos.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.dto.EstadoPrestamoRequest;
 import org.nttdata.com.servicioprestamos.service.EstadoPrestamoService;
@@ -22,11 +23,11 @@ public class EstadoPrestamoController {
         return ResponseEntity.ok(estadoPrestamoService.getEstadoPrestamoById(id));
     }
     @PostMapping
-    public ResponseEntity<?> crearEstadoPrestamo(@RequestBody EstadoPrestamoRequest estado) {
+    public ResponseEntity<?> crearEstadoPrestamo(@Valid @RequestBody EstadoPrestamoRequest estado) {
         return ResponseEntity.status(HttpStatus.CREATED).body(estadoPrestamoService.createEstadoPrestamo(estado));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarEstadoPrestamo(@PathVariable Long id, @RequestBody EstadoPrestamoRequest estado) {
+    public ResponseEntity<?> actualizarEstadoPrestamo(@PathVariable Long id,@Valid @RequestBody EstadoPrestamoRequest estado) {
         return ResponseEntity.ok(estadoPrestamoService.updateEstadoPrestamo(id, estado));
     }
     @DeleteMapping("/{id}")

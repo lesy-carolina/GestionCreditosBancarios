@@ -3,10 +3,14 @@ package org.nttdata.com.servicioprestamos.exception;
 import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @ControllerAdvice
 @Hidden
@@ -29,6 +33,19 @@ public class ExceptionHandleController {
         );
         return ResponseEntity.status(error.getStatus()).body(error);
     }
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<?> handleValidationExceptions(MethodArgumentNotValidException e) {
+        List<ErrorResponseValidItem> errors = e.getBindingResult().getFieldErrors().stream()
+                .map(error -> new ErrorResponseValidItem(error.getField(), error.getDefaultMessage()))
+                .toList();
+        ErrorResponseValid errorResponse = new ErrorResponseValid(
+                HttpStatus.BAD_REQUEST.value(),
+                errors,
+                LocalDateTime.now().toString()
+        );
+        return ResponseEntity.status(errorResponse.getStatus()).body(errorResponse);
+    }
+
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<?> globalExceptionHandler(RuntimeException e) {
         ErrorResponse error = new ErrorResponse(

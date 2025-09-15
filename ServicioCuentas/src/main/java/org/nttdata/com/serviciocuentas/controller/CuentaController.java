@@ -1,5 +1,6 @@
 package org.nttdata.com.serviciocuentas.controller;
 
+import jakarta.validation.Valid;
 import org.nttdata.com.serviciocuentas.dto.CuentaRequest;
 import org.nttdata.com.serviciocuentas.dto.CuentaResponse;
 import org.nttdata.com.serviciocuentas.service.CuentaService;
@@ -23,7 +24,7 @@ public class CuentaController {
     private CuentaService cuentaService;
 
     @PostMapping
-    public ResponseEntity<?> crearCuenta(@RequestBody CuentaRequest request) {
+    public ResponseEntity<?> crearCuenta(@Valid @RequestBody CuentaRequest request) {
         logger.info("POST /cuentas - Crear nueva cuenta");
 
         try {
@@ -80,7 +81,7 @@ public class CuentaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarCuenta(@PathVariable Long id, @RequestBody CuentaRequest request) {
+    public ResponseEntity<?> actualizarCuenta(@PathVariable Long id,@Valid @RequestBody CuentaRequest request) {
         logger.info("PUT /cuentas/{} - Actualizar cuenta", id);
 
         try {

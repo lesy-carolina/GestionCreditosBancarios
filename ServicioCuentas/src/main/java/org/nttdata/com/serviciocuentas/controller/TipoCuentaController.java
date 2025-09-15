@@ -1,5 +1,6 @@
 package org.nttdata.com.serviciocuentas.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.serviciocuentas.dto.TipoCuentaRequest;
 import org.nttdata.com.serviciocuentas.service.TipoCuentaService;
@@ -21,11 +22,11 @@ public class TipoCuentaController {
         return ResponseEntity.ok(tipoCuentaService.getTipoCuentaById(id));
     }
     @PostMapping
-    public ResponseEntity<?> createTipoCuenta(@RequestBody TipoCuentaRequest tipoCuentaRequest) {
+    public ResponseEntity<?> createTipoCuenta(@Valid @RequestBody TipoCuentaRequest tipoCuentaRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(tipoCuentaService.createTipoCuenta(tipoCuentaRequest));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateTipoCuenta(@PathVariable Long id, @RequestBody TipoCuentaRequest tipoCuentaRequest) {
+    public ResponseEntity<?> updateTipoCuenta(@PathVariable Long id, @Valid @RequestBody TipoCuentaRequest tipoCuentaRequest) {
         return ResponseEntity.ok(tipoCuentaService.updateTipoCuenta(id, tipoCuentaRequest));
     }
     @DeleteMapping("/{id}")

@@ -1,5 +1,6 @@
 package org.nttdata.com.serviciocuentas.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.serviciocuentas.dto.EstadoCuentaRequest;
 import org.nttdata.com.serviciocuentas.service.EstadoCuentaService;
@@ -21,11 +22,11 @@ public class EstadoCuentaController {
         return ResponseEntity.ok(estadoCuentaService.getEstadoCuentaById(id));
     }
     @PostMapping
-    public ResponseEntity<?> createEstadoCuenta(@RequestBody EstadoCuentaRequest estadoCuentaRequest) {
+    public ResponseEntity<?> createEstadoCuenta(@Valid @RequestBody EstadoCuentaRequest estadoCuentaRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(estadoCuentaService.saveEstadoCuenta(estadoCuentaRequest));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateEstadoCuenta(@PathVariable Long id, @RequestBody EstadoCuentaRequest estadoCuentaRequest) {
+    public ResponseEntity<?> updateEstadoCuenta(@PathVariable Long id, @Valid @RequestBody EstadoCuentaRequest estadoCuentaRequest) {
         return ResponseEntity.ok(estadoCuentaService.updateEstadoCuenta(id, estadoCuentaRequest));
     }
     @DeleteMapping("/{id}")

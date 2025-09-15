@@ -1,5 +1,6 @@
 package org.nttdata.com.serviciotransacciones.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.serviciotransacciones.dto.TransaccionRequest;
 import org.nttdata.com.serviciotransacciones.service.TransaccionService;
@@ -26,11 +27,11 @@ public class TransaccionController {
         return ResponseEntity.ok(transaccionService.getTransaccionById(id));
     }
     @PostMapping
-    public ResponseEntity<?> createTransaccion(@RequestBody TransaccionRequest transaccionRequest) {
+    public ResponseEntity<?> createTransaccion(@Valid @RequestBody TransaccionRequest transaccionRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(transaccionService.createTransaccion(transaccionRequest));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateTransaccion(@PathVariable Long id, @RequestBody TransaccionRequest transaccionRequest) {
+    public ResponseEntity<?> updateTransaccion(@PathVariable Long id, @Valid @RequestBody TransaccionRequest transaccionRequest) {
         return ResponseEntity.ok(transaccionService.updateTransaccion(id, transaccionRequest));
     }
     @DeleteMapping("/{id}")
