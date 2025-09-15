@@ -67,4 +67,9 @@ public class CuotaServiceImpl implements CuotaService {
         cuotaRepository.delete(cuotaFound);
 
     }
+
+    @Override
+    public List<CuotaResponse> getCuotasByPrestamoId(Long prestamoId) {
+        return cuotaMapper.toDtoList(cuotaRepository.findByPrestamoId(prestamoId));
+    }
 }
