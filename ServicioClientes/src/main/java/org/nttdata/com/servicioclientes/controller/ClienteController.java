@@ -1,9 +1,11 @@
 package org.nttdata.com.servicioclientes.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioclientes.dto.ClienteRequest;
 import org.nttdata.com.servicioclientes.dto.ClienteResponse;
 import org.nttdata.com.servicioclientes.service.ClienteService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +19,7 @@ public class ClienteController {
     private final ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<ClienteResponse> crearCliente(@RequestBody ClienteRequest request) {
+    public ResponseEntity<ClienteResponse> crearCliente(@Valid @RequestBody ClienteRequest request) {
         ClienteResponse response = clienteService.crearCliente(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -33,6 +35,14 @@ public class ClienteController {
         List<ClienteResponse> responses = clienteService.obtenerTodosClientes();
         return ResponseEntity.ok(responses);
     }
+    // Inyectar el puerto del servidor para demostrar el balanceo de carga
+    @Value("${server.port}")
+    private String port;
+    @GetMapping("/{idCliente}/cuentas")
+    public ResponseEntity<?> obtenerClienteConCuentas(@PathVariable Long idCliente) {
+        System.out.println("Atendiendo solicitud desde instancia con el puerto: " + port);
+        return ResponseEntity.ok(clienteService.obtenerClienteConCuentas(idCliente));
+    }
 
     @GetMapping("/estado/{estado}")
     public ResponseEntity<List<ClienteResponse>> obtenerClientesPorEstado(
@@ -43,7 +53,7 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ClienteResponse> actualizarCliente(
-            @PathVariable Long id, @RequestBody ClienteRequest request) {
+            @PathVariable Long id,@Valid @RequestBody ClienteRequest request) {
         ClienteResponse response = clienteService.actualizarCliente(id, request);
         return ResponseEntity.ok(response);
     }

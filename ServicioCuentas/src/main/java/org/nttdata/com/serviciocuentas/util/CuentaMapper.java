@@ -8,7 +8,7 @@ import org.nttdata.com.serviciocuentas.model.Cuenta;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {TipoCuentaMapper.class, EstadoCuentaMapper.class})
 public interface CuentaMapper {
     @Mapping(source = "tipoCuentaId", target = "tipoCuenta.id")
     @Mapping(source = "estadoCuentaId", target = "estadoCuenta.id")

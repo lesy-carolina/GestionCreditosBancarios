@@ -9,16 +9,22 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="ServicioEureka" />
+        <module name="configServer" />
       </profile>
-      <profile name="Annotation profile for ServicioCuentas" enabled="true">
+      <profile name="Annotation profile for ServicioClientes" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.6.3/mapstruct-processor-1.6.3.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
+        </processorPath>
+        <module name="ServicioClientes" />
+      </profile>
+      <profile name="Annotation profile for ServicioTransacciones" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.6.3/mapstruct-processor-1.6.3.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
@@ -28,17 +34,10 @@
         <module name="ServicioCuentas" />
         <module name="ServicioPrestamos" />
       </profile>
-      <profile name="Annotation profile for ServicioClientes" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="ServicioClientes" />
-      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="maven-archiver" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -48,6 +47,7 @@
       <module name="ServicioPrestamos" options="-parameters" />
       <module name="ServicioTransacciones" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
+      <module name="configServer" options="-parameters" />
     </option>
   </component>
 </project>

@@ -11,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class CuotaResponse {
+    private Long id;
     private PrestamoResponse prestamo;
     private Integer numero;
     private Date fechaVencimiento;

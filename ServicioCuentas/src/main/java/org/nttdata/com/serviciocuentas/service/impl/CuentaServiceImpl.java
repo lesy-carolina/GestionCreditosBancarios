@@ -84,7 +84,6 @@ public class CuentaServiceImpl implements CuentaService {
     @Transactional(readOnly = true)
     public List<CuentaResponse> obtenerTodasCuentas() {
         logger.info("Obteniendo todas las cuentas");
-
         List<Cuenta> cuentas = cuentaRepository.findAll();
         logger.info("Total de cuentas encontradas: {}", cuentas.size());
 

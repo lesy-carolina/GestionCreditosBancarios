@@ -1,5 +1,6 @@
 package org.nttdata.com.servicioprestamos.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.dto.PrestamoRequest;
 import org.nttdata.com.servicioprestamos.service.PrestamoService;
@@ -22,11 +23,11 @@ public class PrestamoController {
         return ResponseEntity.ok(prestamoService.getPrestamoById(id));
     }
     @PostMapping
-    public ResponseEntity<?> crearPrestamo(@RequestBody PrestamoRequest prestamo) {
+    public ResponseEntity<?> crearPrestamo(@Valid @RequestBody PrestamoRequest prestamo) {
         return ResponseEntity.status(HttpStatus.CREATED).body(prestamoService.createPrestamo(prestamo));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarPrestamo(@PathVariable Long id, @RequestBody PrestamoRequest prestamo) {
+    public ResponseEntity<?> actualizarPrestamo(@PathVariable Long id,@Valid @RequestBody PrestamoRequest prestamo) {
         return ResponseEntity.ok(prestamoService.updatePrestamo(id, prestamo));
     }
     @DeleteMapping("/{id}")

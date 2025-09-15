@@ -13,8 +13,8 @@ import java.math.BigDecimal;
 public class CuentaResponse {
     private Long id;
     private Long clienteId;
-    private Long tipoCuentaId;
-    private Long estadoCuentaId;
+    private TipoCuentaResponse tipoCuenta;
+    private EstadoCuentaResponse estadoCuenta;
     private BigDecimal saldo;
 
 }

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/org/nttdata/com/apigateway/configuration/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/CuentaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/CuentaClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/controller/CuentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/controller/CuentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/ClienteClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/ClienteClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/TransaccionClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/TransaccionClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/CuentaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/CuentaClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Frank18ci&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Frank18ci/GestionCreditosBancarios.git&quot;,
+    &quot;accountId&quot;: &quot;1a68f355-6baa-483a-b264-deae6e3f1497&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="32heg1B6lhShM14F4gbxNX0Nail" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.ServicioClientes [package].executor": "Run",
+    "Maven.ServicioCuentas [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "619",
+    "RequestMappingsPanelWidth1": "618",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.ServicioClientesApplication.executor": "Run",
+    "Spring Boot.ServicioCuentasApplication.executor": "Run",
+    "Spring Boot.ServicioEurekaApplication.executor": "Run",
+    "Spring Boot.ServicioPrestamosApplication.executor": "Run",
+    "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
+    "git-widget-placeholder": "feature/crud-prestamos",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/exception",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioClientes\src\main\java\org\nttdata\com\servicioclientes\exception" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioCuentas\src\main\java\org\nttdata\com\serviciocuentas\exception" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioTransacciones\src\main\java\org\nttdata\com\serviciotransacciones\exception" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.nttdata.com.servicioprestamos.exception" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.apigateway.ApiGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.apigateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="configServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.configserver.ConfigServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.configserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioClientesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioClientes" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioclientes.ServicioClientesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioCuentasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioCuentas" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.serviciocuentas.ServicioCuentasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioEureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioeureka.ServicioEurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioPrestamosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioPrestamos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioprestamos.ServicioPrestamosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioTransaccionesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioTransacciones" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.serviciotransacciones.ServicioTransaccionesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ApiGatewayApplication" />
+        <item itemvalue="Spring Boot.ConfigServerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="" />
+      <created>1757877345155</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757877345155</updated>
+      <workItem from="1757877346021" duration="9120000" />
+      <workItem from="1757953088877" duration="4897000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
