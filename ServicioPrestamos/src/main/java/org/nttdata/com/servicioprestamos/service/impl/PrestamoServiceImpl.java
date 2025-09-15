@@ -4,8 +4,10 @@ import feign.FeignException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.client.ClienteClient;
+import org.nttdata.com.servicioprestamos.client.CuentaClient;
 import org.nttdata.com.servicioprestamos.client.TransaccionClient;
 import org.nttdata.com.servicioprestamos.client.dto.ClienteResponse;
+import org.nttdata.com.servicioprestamos.client.dto.CuentaResponse;
 import org.nttdata.com.servicioprestamos.client.dto.TransaccionResponse;
 import org.nttdata.com.servicioprestamos.dto.PrestamoRequest;
 import org.nttdata.com.servicioprestamos.dto.PrestamoResponse;
@@ -29,8 +31,8 @@ public class PrestamoServiceImpl implements PrestamoService {
     private final PrestamoMapper prestamoMapper;
     private final ClienteClient clienteClient;
     private final TransaccionClient transaccionClient;
+    private final CuentaClient cuentaClient;
 
-    private static final String CLIENTE_SERVICE_CB = "clienteService";
 
 
     @Override
@@ -51,25 +53,37 @@ public class PrestamoServiceImpl implements PrestamoService {
         );
     }
 
+    @CircuitBreaker(name = "clienteService", fallbackMethod = "clienteFallback")
+    public ClienteResponse getClienteById(Long clienteId) {
+        try{
+            return clienteClient.getClienteById(clienteId);
+        } catch (FeignException.NotFound ex){
+            throw new ResourceNotFound("Cliente no encontrado con id: " + clienteId);
+        }
+    }
+    public ClienteResponse clienteFallback(Long clienteId, Throwable ex) {
+        throw new RuntimeException("FALLBACK: Servicio de clientes no disponible para clienteId=" + clienteId, ex);
+    }
+    @CircuitBreaker(name = "cuentaService", fallbackMethod = "cuentaFallback")
+    public CuentaResponse getCuentaById(Long cuentaId) {
+        try{
+            return cuentaClient.getCuentaById(cuentaId);
+        } catch (FeignException.NotFound ex){
+            throw new ResourceNotFound("Cuenta no encontrado con id: " + cuentaId);
+        }
+    }
+    public CuentaResponse cuentaFallback(Long cuentaId, Throwable ex) {
+        throw new RuntimeException("FALLBACK: Servicio de cuentas no disponible para cuentaId=" + cuentaId, ex);
+    }
+
     @Override
     @Transactional
-    @CircuitBreaker(name = CLIENTE_SERVICE_CB, fallbackMethod = "createPrestamoFallback")
     public PrestamoResponse createPrestamo(PrestamoRequest prestamoDto) {
 
         //Verificar existencia del cliente
-        ClienteResponse clienteResponse;
-        try{
-            clienteResponse = clienteClient.getClienteById(prestamoDto.getClienteId());
-            if(clienteResponse == null || clienteResponse.getId() == null){
-                throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
-            }
-        } catch (FeignException.NotFound ex){
-            throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
-        }
-
+        ClienteResponse clienteResponse = getClienteById(prestamoDto.getClienteId());
         //Verificacion existencia de cuenta
-
-
+        CuentaResponse cuentaResponse = getCuentaById(prestamoDto.getCuentaId());
 
 
         //Evaluar credito
@@ -171,27 +185,20 @@ public class PrestamoServiceImpl implements PrestamoService {
         System.out.println("Tasa de interés válida.");
     }
 
-    public PrestamoResponse createPrestamoFallback(PrestamoRequest prestamoDto, Throwable ex) {
-        throw new RuntimeException("El servicio de clientes no está disponible. Intente más tarde" + ex);
-    }
+
 
     @Override
-    @CircuitBreaker(name = CLIENTE_SERVICE_CB, fallbackMethod = "createPrestamoFallback")
+    @Transactional
     public PrestamoResponse updatePrestamo(Long id, PrestamoRequest prestamoDto) {
         Prestamo prestamoFound = prestamoRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Préstamo no encontrado con id: " + id)
         );
 
         //Verificar existencia del cliente
-        ClienteResponse clienteResponse;
-        try{
-            clienteResponse = clienteClient.getClienteById(prestamoDto.getClienteId());
-            if(clienteResponse == null || clienteResponse.getId() == null){
-                throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
-            }
-        } catch (FeignException.NotFound ex){
-            throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
-        }
+        ClienteResponse clienteResponse = getClienteById(prestamoDto.getClienteId());
+        //Verificacion existencia de cuenta
+        CuentaResponse cuentaResponse = getCuentaById(prestamoDto.getCuentaId());
+
 
         prestamoFound.setClienteId(prestamoDto.getClienteId());
         prestamoFound.setCuentaId(prestamoDto.getCuentaId());
