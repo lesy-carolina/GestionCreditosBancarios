@@ -7,6 +7,7 @@ import org.nttdata.com.serviciocuentas.service.CuentaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -51,9 +52,12 @@ public class CuentaController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
-
+    // Inyectar el puerto del servidor para demostrar el balanceo de carga
+    @Value("${server.port}")
+    private String port;
     @GetMapping("/cliente/{idCliente}")
     public ResponseEntity<?> obtenerCuentasPorCliente(@PathVariable Long idCliente) {
+        System.out.println("Atendiendo solicitud desde instancia con el puerto: " + port);
         logger.info("GET /cuentas/cliente/{} - Obtener cuentas por cliente", idCliente);
 
         try {

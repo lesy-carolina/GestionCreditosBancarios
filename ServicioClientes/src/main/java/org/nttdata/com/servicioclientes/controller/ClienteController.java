@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioclientes.dto.ClienteRequest;
 import org.nttdata.com.servicioclientes.dto.ClienteResponse;
 import org.nttdata.com.servicioclientes.service.ClienteService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,8 +35,12 @@ public class ClienteController {
         List<ClienteResponse> responses = clienteService.obtenerTodosClientes();
         return ResponseEntity.ok(responses);
     }
+    // Inyectar el puerto del servidor para demostrar el balanceo de carga
+    @Value("${server.port}")
+    private String port;
     @GetMapping("/{idCliente}/cuentas")
     public ResponseEntity<?> obtenerClienteConCuentas(@PathVariable Long idCliente) {
+        System.out.println("Atendiendo solicitud desde instancia con el puerto: " + port);
         return ResponseEntity.ok(clienteService.obtenerClienteConCuentas(idCliente));
     }
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "ServicioTransacciones", url = "http://localhost:8080/serviciotransacciones", configuration = FeignClientConfig.class)
+@FeignClient(name = "ServicioTransacciones", configuration = FeignClientConfig.class)
 public interface TransaccionClient {
     @GetMapping("/transacciones/cuenta/{cuentaId}")
     List<TransaccionResponse> obteTransacciones(@PathVariable Long cuentaId);
