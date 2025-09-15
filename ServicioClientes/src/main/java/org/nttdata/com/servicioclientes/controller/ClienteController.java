@@ -1,5 +1,6 @@
 package org.nttdata.com.servicioclientes.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioclientes.dto.ClienteRequest;
 import org.nttdata.com.servicioclientes.dto.ClienteResponse;
@@ -17,7 +18,7 @@ public class ClienteController {
     private final ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<ClienteResponse> crearCliente(@RequestBody ClienteRequest request) {
+    public ResponseEntity<ClienteResponse> crearCliente(@Valid @RequestBody ClienteRequest request) {
         ClienteResponse response = clienteService.crearCliente(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -47,7 +48,7 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ClienteResponse> actualizarCliente(
-            @PathVariable Long id, @RequestBody ClienteRequest request) {
+            @PathVariable Long id,@Valid @RequestBody ClienteRequest request) {
         ClienteResponse response = clienteService.actualizarCliente(id, request);
         return ResponseEntity.ok(response);
     }

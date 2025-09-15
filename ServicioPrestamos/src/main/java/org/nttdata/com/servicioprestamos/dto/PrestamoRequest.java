@@ -19,7 +19,7 @@ public class PrestamoRequest {
     private Long clienteId;
     @NotNull(message = "El ID de la cuenta no puede ser nulo")
     private Long cuentaId;
-    @NotBlank(message = "El monto no puede estar vacío")
+    @NotNull(message = "El monto no puede ser nulo")
     @Positive(message = "El monto debe ser un valor positivo")
     private BigDecimal monto;
     @NotNull(message = "El plazo en meses no puede ser nulo")

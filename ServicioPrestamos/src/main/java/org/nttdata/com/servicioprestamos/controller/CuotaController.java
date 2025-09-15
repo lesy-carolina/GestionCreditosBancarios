@@ -1,5 +1,6 @@
 package org.nttdata.com.servicioprestamos.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.dto.CuotaRequest;
 import org.nttdata.com.servicioprestamos.service.CuotaService;
@@ -21,11 +22,11 @@ public class CuotaController {
         return ResponseEntity.ok(cuotaService.getCuotaById(id));
     }
     @PostMapping
-    public ResponseEntity<?> crearCuota(@RequestBody CuotaRequest cuotaRequest) {
+    public ResponseEntity<?> crearCuota(@Valid @RequestBody CuotaRequest cuotaRequest) {
         return ResponseEntity.ok(cuotaService.saveCuota(cuotaRequest));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarCuota(@PathVariable Long id, @RequestBody CuotaRequest cuotaRequest) {
+    public ResponseEntity<?> actualizarCuota(@PathVariable Long id, @Valid @RequestBody CuotaRequest cuotaRequest) {
         return ResponseEntity.ok(cuotaService.updateCuota(id, cuotaRequest));
     }
     @DeleteMapping("/{id}")
