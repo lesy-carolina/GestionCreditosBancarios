@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="">
+    <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API">
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/org/nttdata/com/apigateway/configuration/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/controller/CuotaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/controller/CuotaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/CuotaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/CuotaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/configuration/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/org/nttdata/com/apigateway/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/org/nttdata/com/apigateway/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +53,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -51,35 +65,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.ServicioClientes [package].executor": "Run",
-    "Maven.ServicioCuentas [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.ApiGatewayApplication.executor": "Run",
-    "Spring Boot.ConfigServerApplication.executor": "Run",
-    "Spring Boot.ServicioClientesApplication.executor": "Run",
-    "Spring Boot.ServicioCuentasApplication.executor": "Run",
-    "Spring Boot.ServicioEurekaApplication.executor": "Run",
-    "Spring Boot.ServicioPrestamosApplication.executor": "Debug",
-    "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
-    "git-widget-placeholder": "18909d85",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.ServicioClientes [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ServicioCuentas [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicioClientesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicioCuentasApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicioEurekaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicioPrestamosApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicioTransaccionesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -91,6 +108,7 @@
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioTransacciones\src\main\java\org\nttdata\com\serviciotransacciones\exception" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.nttdata.com.apigateway.configuration" />
       <recent name="org.nttdata.com.servicioprestamos.client.dto" />
       <recent name="org.nttdata.com.servicioclientes.exception" />
       <recent name="org.nttdata.com.servicioprestamos.exception" />
@@ -174,8 +192,8 @@
       <item itemvalue="Spring Boot.ServicioEurekaApplication" />
       <item itemvalue="Spring Boot.ServicioPrestamosApplication" />
       <item itemvalue="Spring Boot.ServicioTransaccionesApplication" />
-      <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -202,10 +220,16 @@
       <updated>1757877345155</updated>
       <workItem from="1757877346021" duration="9120000" />
       <workItem from="1757953088877" duration="4897000" />
+      <workItem from="1758031419621" duration="6335000" />
+      <workItem from="1758038297643" duration="816000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API" />
   </component>
 </project>
