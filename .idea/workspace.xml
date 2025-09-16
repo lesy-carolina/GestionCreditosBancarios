@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +110,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
+  <component name="RunManager" selected="JUnit.ClienteServiceImplTest">
+    <configuration name="ClienteServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ServicioClientes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.servicioclientes.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nttdata.com.servicioclientes.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.servicioclientes.service.impl.ClienteServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.apigateway.ApiGatewayApplication" />
@@ -177,6 +188,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.ClienteServiceImplTest" />
       <item itemvalue="Spring Boot.ServicioClientesApplication" />
       <item itemvalue="Spring Boot.ServicioCuentasApplication" />
       <item itemvalue="Spring Boot.ServicioEurekaApplication" />
@@ -187,6 +199,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClienteServiceImplTest" />
         <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.ConfigServerApplication" />
       </list>
@@ -213,7 +226,7 @@
       <workItem from="1758031419621" duration="6335000" />
       <workItem from="1758038297643" duration="1093000" />
       <workItem from="1758048343206" duration="1079000" />
-      <workItem from="1758056693015" duration="2787000" />
+      <workItem from="1758056693015" duration="4459000" />
     </task>
     <servers />
   </component>
