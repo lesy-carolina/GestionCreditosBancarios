@@ -29,6 +29,10 @@ public class CuotaController {
     public ResponseEntity<?> crearCuota(@Valid @RequestBody CuotaRequest cuotaRequest) {
         return ResponseEntity.ok(cuotaService.saveCuota(cuotaRequest));
     }
+    @PostMapping("/pagar/{cuentaId}/{id}")
+    public ResponseEntity<?> pagarCuota(@PathVariable Long id, @PathVariable Long cuentaId) {
+        return ResponseEntity.ok(cuotaService.pagarCuota(id, cuentaId));
+    }
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarCuota(@PathVariable Long id, @Valid @RequestBody CuotaRequest cuotaRequest) {
         return ResponseEntity.ok(cuotaService.updateCuota(id, cuotaRequest));

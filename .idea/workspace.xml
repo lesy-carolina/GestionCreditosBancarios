@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/CuentaRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TipoTransaccionRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TransaccionRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/CuentaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/CuentaClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/TransaccionClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/TransaccionClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/controller/CuotaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/controller/CuotaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/controller/PrestamoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/controller/PrestamoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/CuotaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/CuotaRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/CuotaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/CuotaResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/models/Cuota.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/models/Cuota.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/repository/CuotaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/repository/CuotaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/repository/PrestamoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/repository/PrestamoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/CuotaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/CuotaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/PrestamoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/PrestamoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/CuotaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/CuotaServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,9 +66,9 @@
     "Spring Boot.ServicioClientesApplication.executor": "Run",
     "Spring Boot.ServicioCuentasApplication.executor": "Run",
     "Spring Boot.ServicioEurekaApplication.executor": "Run",
-    "Spring Boot.ServicioPrestamosApplication.executor": "Run",
+    "Spring Boot.ServicioPrestamosApplication.executor": "Debug",
     "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
-    "git-widget-placeholder": "feature/crud-prestamos",
+    "git-widget-placeholder": "18909d85",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto",
     "node.js.detected.package.eslint": "true",
