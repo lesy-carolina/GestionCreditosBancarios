@@ -6,6 +6,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
 
 @Configuration
 @EnableWebSecurity
@@ -13,6 +14,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .cors(cors -> cors.configurationSource(request -> corsConfiguration()))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(
                                 "/api-docs/**",
@@ -26,5 +28,13 @@ public class SecurityConfig {
                         .jwt(Customizer.withDefaults())
                 );
         return http.build();
+    }
+    @Bean
+    public CorsConfiguration corsConfiguration() {
+        CorsConfiguration corsConfig = new CorsConfiguration();
+        corsConfig.addAllowedOrigin("http://localhost:8080");
+        corsConfig.addAllowedHeader("*");
+        corsConfig.addAllowedMethod("*");
+        return corsConfig;
     }
 }

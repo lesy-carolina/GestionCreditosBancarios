@@ -25,4 +25,5 @@ public class SwaggerConfig {
                                         .type(SecurityScheme.Type.OPENIDCONNECT)
                                         .openIdConnectUrl("http://localhost:9000/realms/GestionCreditosBancarios/.well-known/openid-configuration")));
     }
+
 }
