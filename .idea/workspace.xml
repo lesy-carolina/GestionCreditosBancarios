@@ -5,7 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/configuration/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/configuration/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/controller/EstadoNotificacionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/controller/NotificacionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/controller/TestMailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/controller/TipoNotificacionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/dto/EstadoNotificacionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/dto/EstadoNotificacionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/dto/NotificacionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/dto/NotificacionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/dto/TipoNotificacionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/dto/TipoNotificacionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/exception/BadRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/exception/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/exception/ErrorResponseValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/exception/ErrorResponseValidItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/exception/ExceptionHandleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/exception/ResourceNotFound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/model/EstadoNotificacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/model/Notificacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/model/TipoNotificacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/repository/EstadoNotificacionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/repository/NotificacionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/repository/TipoNotificacionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/service/EstadoNotificacionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/service/NotificacionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/service/TipoNotificacionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/service/impl/EstadoNotificacionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/service/impl/NotificacionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/service/impl/TipoNotificacionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/util/EstadoNotificacionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/util/MainManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/util/NotificacionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/util/TipoNotificacionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/FeignClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/FeignClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +56,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -51,43 +93,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.ServicioClientes [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ServicioCuentas [package].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicioClientesApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicioCuentasApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicioEurekaApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicioPrestamosApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicioTransaccionesApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.ClienteServiceImplTest.executor": "Run",
+    "Maven.ServicioClientes [package].executor": "Run",
+    "Maven.ServicioCuentas [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.ServicioClientesApplication.executor": "Run",
+    "Spring Boot.ServicioCuentasApplication.executor": "Run",
+    "Spring Boot.ServicioEurekaApplication.executor": "Run",
+    "Spring Boot.ServicioNotificacionesApplication.executor": "Run",
+    "Spring Boot.ServicioPrestamosApplication.executor": "Run",
+    "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
+    "git-widget-placeholder": "feature/crud-notificaciones",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/.env",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioNotificaciones\src\main\java\org\nttdata\com\servicionotificaciones" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioPrestamos\src\main\java\org\nttdata\com\servicioprestamos\client\dto" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioClientes\src\main\java\org\nttdata\com\servicioclientes\exception" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioCuentas\src\main\java\org\nttdata\com\serviciocuentas\exception" />
@@ -173,6 +219,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServicioNotificacionesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioNotificaciones" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicionotificaciones.ServicioNotificacionesApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="true" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+          <ENTRY IS_ENABLED="true" PARSER="env" IS_EXECUTABLE="false" PATH=".env" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServicioPrestamosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ServicioPrestamos" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioprestamos.ServicioPrestamosApplication" />
@@ -189,6 +253,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ClienteServiceImplTest" />
+      <item itemvalue="Spring Boot.ServicioNotificacionesApplication" />
       <item itemvalue="Spring Boot.ServicioClientesApplication" />
       <item itemvalue="Spring Boot.ServicioCuentasApplication" />
       <item itemvalue="Spring Boot.ServicioEurekaApplication" />
@@ -199,9 +264,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClienteServiceImplTest" />
         <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.ConfigServerApplication" />
+        <item itemvalue="JUnit.ClienteServiceImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +291,9 @@
       <workItem from="1758031419621" duration="6335000" />
       <workItem from="1758038297643" duration="1093000" />
       <workItem from="1758048343206" duration="1079000" />
-      <workItem from="1758056693015" duration="4459000" />
+      <workItem from="1758056693015" duration="13733000" />
+      <workItem from="1758116849480" duration="10196000" />
+      <workItem from="1758127874949" duration="1171000" />
     </task>
     <servers />
   </component>

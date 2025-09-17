@@ -80,6 +80,24 @@ services:
     volumes:
 
       - pgdata:/var/lib/postgresql/data4
+  db-notificaciones:
+
+    image: postgres:15
+
+    environment:
+
+      POSTGRES_USER: postgres
+
+      POSTGRES_PASSWORD: postgres
+
+      POSTGRES_DB: db_notificaciones
+
+    ports:
+
+      - "5444:5432"
+    volumes:
+
+      - pgdata:/var/lib/postgresql/data5
 
   keycloak:
     image: quay.io/keycloak/keycloak:24.0.1

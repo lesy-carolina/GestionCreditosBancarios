@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/configServer/pom.xml" />
         <option value="$PROJECT_DIR$/ServicioCuentas/pom.xml" />
         <option value="$PROJECT_DIR$/ServicioTransacciones/pom.xml" />
+        <option value="$PROJECT_DIR$/ServicioNotificaciones/pom.xml" />
       </list>
     </option>
   </component>
