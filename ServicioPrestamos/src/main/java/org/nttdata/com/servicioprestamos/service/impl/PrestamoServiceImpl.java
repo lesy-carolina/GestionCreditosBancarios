@@ -14,6 +14,9 @@ import org.nttdata.com.servicioprestamos.exception.BadRequest;
 import org.nttdata.com.servicioprestamos.exception.ResourceNotFound;
 import org.nttdata.com.servicioprestamos.models.EstadoPrestamo;
 import org.nttdata.com.servicioprestamos.models.Prestamo;
+import org.nttdata.com.servicioprestamos.producer.NotificacionProducer;
+import org.nttdata.com.servicioprestamos.producer.dto.ClienteResponseK;
+import org.nttdata.com.servicioprestamos.producer.dto.NotificacionRequestK;
 import org.nttdata.com.servicioprestamos.repository.PrestamoRepository;
 import org.nttdata.com.servicioprestamos.service.CuotaService;
 import org.nttdata.com.servicioprestamos.service.PrestamoService;
@@ -37,6 +40,9 @@ public class PrestamoServiceImpl implements PrestamoService {
     private final TransaccionClient transaccionClient;
     private final CuentaClient cuentaClient;
     private final CuotaService cuotaService;
+
+    // Kafka
+    private final NotificacionProducer notificacionProducer;
 
 
     @Override
@@ -103,6 +109,22 @@ public class PrestamoServiceImpl implements PrestamoService {
         //Asignar fecha de desembolso nula por defecto (será asignada al desembolsar el préstamo)
         prestamo.setFechaDesembolso(null);
 
+
+        //Enviar notificación de creación de préstamo
+        notificacionProducer.enviarNotificacion(NotificacionRequestK.builder()
+                        .cliente(ClienteResponseK.builder()
+                                .id(clienteResponse.getId())
+                                .nombre(clienteResponse.getNombre())
+                                .email(clienteResponse.getEmail())
+                                .dni(clienteResponse.getDni())
+                                .estado(clienteResponse.getEstado())
+                                .build())
+                        .tipoNotificacionId(1L) // Tipo de notificación: Préstamo
+                        .asunto("Creación de Préstamo")
+                        .mensaje("Su solicitud de préstamo por un monto de " + prestamoDto.getMonto() + " ha sido recibida y está en proceso de evaluación.")
+                        .fechaEnvio(new Date())
+                        .estadoNotificacionId(1L) // Estado: PENDIENTE
+                .build());
         return prestamoMapper.toDto(prestamoRepository.save(prestamo));
     }
 
@@ -303,6 +325,24 @@ public class PrestamoServiceImpl implements PrestamoService {
                 .build();
 
         cuentaClient.updateCuenta(cuentaResponse.getId(), cuentaRequest);
+
+
+        //Enviar notificación de aceoptacion de préstamo
+        notificacionProducer.enviarNotificacion(NotificacionRequestK.builder()
+                .cliente(ClienteResponseK.builder()
+                        .id(clienteResponse.getId())
+                        .nombre(clienteResponse.getNombre())
+                        .email(clienteResponse.getEmail())
+                        .dni(clienteResponse.getDni())
+                        .estado(clienteResponse.getEstado())
+                        .build())
+                .tipoNotificacionId(1L) // Tipo de notificación: Préstamo
+                .asunto("Creación de Préstamo")
+                .mensaje("Su solicitud de préstamo por un monto de " + prestamoFound.getMonto() + " ha sido aceptada y el monto ha sido depositado en su cuenta.")
+                .fechaEnvio(new Date())
+                .estadoNotificacionId(1L) // Estado: PENDIENTE
+                .build());
+
         return prestamoMapper.toDto(prestamoRepository.save(prestamoFound));
     }
     //Metodo de vlaidacion de cuenta via feign sin circuit breaker
