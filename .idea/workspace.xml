@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API">
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/consumer/NotificacionConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/consumer/dto/ClienteResponseK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/consumer/dto/NotificacionRequestK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/producer/NotificacionProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/producer/dto/ClienteResponseK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/producer/dto/NotificacionRequestK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioNotificaciones/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/controller/TestMailController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/util/MainManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/service/MailManagerPersonalizado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Frank18ci&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Frank18ci/GestionCreditosBancarios.git&quot;,
+    &quot;accountId&quot;: &quot;1a68f355-6baa-483a-b264-deae6e3f1497&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="32heg1B6lhShM14F4gbxNX0Nail" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.ClienteServiceImplTest.executor": "Run",
+    "Maven.ServicioClientes [package].executor": "Run",
+    "Maven.ServicioCuentas [package].executor": "Run",
+    "Maven.ServicioNotificaciones [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.ServicioClientesApplication.executor": "Run",
+    "Spring Boot.ServicioCuentasApplication.executor": "Run",
+    "Spring Boot.ServicioEurekaApplication.executor": "Run",
+    "Spring Boot.ServicioNotificacionesApplication.executor": "Run",
+    "Spring Boot.ServicioPrestamosApplication.executor": "Run",
+    "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
+    "git-widget-placeholder": "feature/crud-notificaciones",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/consumer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioNotificaciones\src\main\java\org\nttdata\com\servicionotificaciones\consumer" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioNotificaciones\src\main\java\org\nttdata\com\servicionotificaciones" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioPrestamos\src\main\java\org\nttdata\com\servicioprestamos\client\dto" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioClientes\src\main\java\org\nttdata\com\servicioclientes\exception" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioCuentas\src\main\java\org\nttdata\com\serviciocuentas\exception" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.nttdata.com.servicioprestamos.producer.dto" />
+      <recent name="org.nttdata.com.apigateway.configuration" />
+      <recent name="org.nttdata.com.servicioprestamos.client.dto" />
+      <recent name="org.nttdata.com.servicioclientes.exception" />
+      <recent name="org.nttdata.com.servicioprestamos.exception" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.ClienteServiceImplTest">
+    <configuration name="ClienteServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ServicioClientes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.servicioclientes.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nttdata.com.servicioclientes.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.servicioclientes.service.impl.ClienteServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.apigateway.ApiGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.apigateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="configServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.configserver.ConfigServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.configserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioClientesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioClientes" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioclientes.ServicioClientesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioCuentasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioCuentas" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.serviciocuentas.ServicioCuentasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioEureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioeureka.ServicioEurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioNotificacionesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioNotificaciones" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicionotificaciones.ServicioNotificacionesApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="true" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+          <ENTRY IS_ENABLED="true" PARSER="env" IS_EXECUTABLE="false" PATH=".env" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioPrestamosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioPrestamos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicioprestamos.ServicioPrestamosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioTransaccionesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServicioTransacciones" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.serviciotransacciones.ServicioTransaccionesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ClienteServiceImplTest" />
+      <item itemvalue="Spring Boot.ServicioNotificacionesApplication" />
+      <item itemvalue="Spring Boot.ServicioClientesApplication" />
+      <item itemvalue="Spring Boot.ServicioCuentasApplication" />
+      <item itemvalue="Spring Boot.ServicioEurekaApplication" />
+      <item itemvalue="Spring Boot.ServicioPrestamosApplication" />
+      <item itemvalue="Spring Boot.ServicioTransaccionesApplication" />
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ApiGatewayApplication" />
+        <item itemvalue="Spring Boot.ConfigServerApplication" />
+        <item itemvalue="JUnit.ClienteServiceImplTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="" />
+      <created>1757877345155</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757877345155</updated>
+      <workItem from="1757877346021" duration="9120000" />
+      <workItem from="1757953088877" duration="4897000" />
+      <workItem from="1758031419621" duration="6335000" />
+      <workItem from="1758038297643" duration="1093000" />
+      <workItem from="1758048343206" duration="1079000" />
+      <workItem from="1758056693015" duration="13733000" />
+      <workItem from="1758116849480" duration="10196000" />
+      <workItem from="1758127874949" duration="1595000" />
+      <workItem from="1758130511811" duration="12135000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API" />
+  </component>
+</project>

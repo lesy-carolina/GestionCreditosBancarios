@@ -1,5 +1,6 @@
 package org.nttdata.com.servicioprestamos.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.dto.CuotaRequest;
 import org.nttdata.com.servicioprestamos.service.CuotaService;
@@ -20,12 +21,20 @@ public class CuotaController {
     public ResponseEntity<?> obtenerCuotaPorId(@PathVariable Long id) {
         return ResponseEntity.ok(cuotaService.getCuotaById(id));
     }
+    @GetMapping("/prestamo/{prestamoId}")
+    public ResponseEntity<?> obtenerCuotasPorPrestamoId(@PathVariable Long prestamoId) {
+        return ResponseEntity.ok(cuotaService.getCuotasByPrestamoId(prestamoId));
+    }
     @PostMapping
-    public ResponseEntity<?> crearCuota(@RequestBody CuotaRequest cuotaRequest) {
+    public ResponseEntity<?> crearCuota(@Valid @RequestBody CuotaRequest cuotaRequest) {
         return ResponseEntity.ok(cuotaService.saveCuota(cuotaRequest));
     }
+    @PostMapping("/pagar/{cuentaId}/{id}")
+    public ResponseEntity<?> pagarCuota(@PathVariable Long id, @PathVariable Long cuentaId) {
+        return ResponseEntity.ok(cuotaService.pagarCuota(id, cuentaId));
+    }
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarCuota(@PathVariable Long id, @RequestBody CuotaRequest cuotaRequest) {
+    public ResponseEntity<?> actualizarCuota(@PathVariable Long id, @Valid @RequestBody CuotaRequest cuotaRequest) {
         return ResponseEntity.ok(cuotaService.updateCuota(id, cuotaRequest));
     }
     @DeleteMapping("/{id}")

@@ -1,5 +1,6 @@
 spring:
   application:
     name: ServicioEureka
-server:
-  port: 8761
+  config:
+    import:
+      - optional:configserver:http://localhost:8888/

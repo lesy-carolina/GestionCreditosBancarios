@@ -9,8 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="ServicioEureka" />
+        <module name="configServer" />
       </profile>
-      <profile name="Annotation profile for ServicioTransacciones" enabled="true">
+      <profile name="Annotation profile for ServicioPrestamos" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -21,20 +22,26 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
         </processorPath>
         <module name="ServicioClientes" />
+        <module name="ServicioNotificaciones" />
         <module name="ServicioTransacciones" />
-        <module name="ServicioCuentas" />
         <module name="ServicioPrestamos" />
+        <module name="ServicioCuentas" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="maven-archiver" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ServicioClientes" options="-parameters" />
       <module name="ServicioCuentas" options="-parameters" />
       <module name="ServicioEureka" options="-parameters" />
+      <module name="ServicioNotificaciones" options="-parameters" />
       <module name="ServicioPrestamos" options="-parameters" />
       <module name="ServicioTransacciones" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
+      <module name="configServer" options="-parameters" />
     </option>
   </component>
 </project>

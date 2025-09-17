@@ -15,7 +15,7 @@ import java.util.Date;
 public class TransaccionResponse {
     private Long id;
     private Long cuentaId;
-    private TipoTransaccionRequest tipoTransaccion;
+    private TipoTransaccionResponse tipoTransaccion;
     private BigDecimal monto;
     private Date fecha;
     private String referencia;
